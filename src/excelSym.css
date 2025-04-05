@@ -1,0 +1,70 @@
+:root {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #1f9b60ff;
+}
+.ex-sym-container{
+    height: 100%;
+}
+
+.ex-sym-box{
+    display: flex;
+    justify-content: center;
+
+}
+.e-sym-box{
+    margin: 5em 0 0 0;
+    padding: 2rem 2rem;
+    width: 100%;
+}
+.e-sym-box >h1{
+    text-align: center;
+    text-decoration: underline #1f9b60ff;
+    text-underline-offset: .35rem;
+}
+.e-sym-box >h4{
+    text-align: center;
+    padding: 0 10%;
+}
+.up-batch-box{
+    margin: -4.5em 0 0 0;
+
+}
+.up-batch-box>ul{
+    list-style: none;
+    line-height: 1.75;
+    margin: 0 0 0 -2.5em;
+}
+.up-batch-box>ul>li{
+    background: #232323ff;
+    width: 50%;
+    padding: .75em;
+    margin:.75em 0;
+    border-radius: .5em;
+}
+.ex-enroll-btn{
+    position: absolute;
+    bottom: .75em;
+    right: 1.25em;
+    border: 1px solid white;
+    text-decoration: none;
+    background: transparent;
+    color: white;
+    font-size: 1.15em;
+    padding: .75em 1em;
+    border-radius: .5em;
+    cursor: pointer;
+}
+.ex-enroll-btn:hover{
+    background: #fff;
+    color: black;
+    transition: .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}

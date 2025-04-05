@@ -1,0 +1,257 @@
+:root {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+
+}
+.train-container{
+    height: 100%;
+}
+.train-box{
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+.t-box{
+    margin: 5em 0 0 0;
+}
+.t-box > h1{
+    text-align: center;
+}
+.train-p{
+    text-decoration: underline #1f9b60ff;
+    text-underline-offset: .35rem;
+}
+.center-box{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.compare-btn{
+    width: 50%;
+    padding: .75em  .5em;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
+        background: rgb(35, 178, 109);
+        color: white;
+        border-radius: 5.597px;
+        font-weight: 500;
+        text-decoration: none;
+        font-family: goth;
+        font-size: 1.05em;
+        border: none;
+}
+.t-price-box{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1.5em;
+    margin: 1.5em;
+}
+.t-plan-box{
+    
+    border: .005em gray solid;
+    border-radius: .5rem;
+    background: #181818ff;
+    font-size: 1.05em;
+    color: white;
+    padding: .5em;
+}
+.t-plan-box:hover{
+    box-shadow: #181818ff;
+}
+.t-plan-box > h3 {
+    font-family: goth-mid;
+    font-weight: 700;
+}
+.t-plan-box > p{
+    padding:  0 0  1.75em 0;
+    border-bottom: .005em solid rgba(255, 255, 255, 0.562);
+    font-size: .95rem;
+}
+.team-radio{
+display: grid;
+grid-template-columns: repeat(2,1fr);
+border: .005em gray solid;
+border-radius: .5rem;
+background: #181818ff;
+font-size: 1.05em;
+color: white;
+padding: .5em;
+align-items: center;
+margin: 1.5em .75em;
+}
+.team-radio:hover{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    border: .055em solid rgb(35, 178, 109);
+    border-radius: .5rem;
+    background: rgba(35, 178, 109, 0.105);
+    transition: .4s ease-in;
+    font-weight: 500;
+    align-items: center;
+}
+.t-active{
+    background: rgba(35, 178, 109, 0.105);
+    border: .055em solid rgb(35, 178, 109);
+    transition: .4s ease-in;
+    font-weight: 500;
+    align-items: center;
+}
+
+.radio-btn{
+width: 2em;
+height: 2em;
+margin: .75em;
+appearance: none;
+    /* Safari support */
+    -webkit-appearance: none;
+    border: .55em solid #FFF;
+    border-radius: 50%;
+    background-color: none;
+}
+.radio-btn:checked{
+    border: .55em solid rgb(35, 178, 109);
+}
+.radio-btn:checked > ul{
+    display: flex;
+}
+.team-radio> p{
+    margin: 0  0 0 -2.5em  ;
+}
+.plan-info{
+    grid-column: 1/3;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+
+}
+.hide-plan-info{
+    display: none;
+}
+.plan-info>ul{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0.5em 0  0.5em -1.95em;
+    gap:.75em;
+    transition: 0.4s ease-in;
+    font-size: .75rem;
+}
+.line{
+    grid-column: 1/3;
+    border-top:.005em solid rgba(255, 255, 255, 0.562);
+}
+.plan-info>li{
+    list-style: none;
+    display: flex;
+    gap: .95em;
+    line-height: 1.5;            /* Adjust line height */
+    margin: 30px 0;
+    padding: .75em 0 1em 0;
+    font-size:.75em;
+  }
+  .tick::before{
+    content: '✔'; /* Unicode checkmark */
+    color: white;
+    font-size: 1rem; /* Adjust checkmark size */
+    margin: 0 .5rem ; /* Spacing*/
+    flex-shrink: 0;  
+    }
+    .cross{
+        color: rgba(255, 255, 255, 0.461);
+    }
+    .cross::before{
+        content: '\274C\FE0E'; /* Unicode checkmark */
+        color: rgba(255, 255, 255, 0.461);
+        font-size: 1rem; /* Adjust checkmark size */
+        margin: -2.5rem .5rem ; /* Spacing*/
+        flex-shrink: 0;  
+        }    
+     .t-reg-btn{
+        width: 100%;
+        padding: .75em  .5em;
+            align-items: center;
+            text-decoration: none;
+            cursor: pointer;
+            background: rgb(35, 178, 109);
+            color: white;
+            border-radius: 5.597px;
+            font-weight: 500;
+            text-decoration: none;
+            font-family: goth;
+            font-size: 1.05em;
+            border: none;
+        }
+        .t-reg-btn-active {
+            width: 100%;
+            padding: .75em  .5em;
+                align-items: center;
+                text-decoration: none;
+                cursor: pointer;
+                background: rgb(35, 178, 109);
+                color: white;
+                border-radius: 5.597px;
+                font-weight: 500;
+                text-decoration: none;
+                font-family: goth;
+                font-size: 1.05em;
+                border: none;
+            transition: 0.3s;
+        }
+        
+        .t-reg-btn-disabled {
+            width: 100%;
+        padding: .75em  .5em;
+            align-items: center;
+            text-decoration: none;
+            background: rgb(164, 165, 165);
+            color: white;
+            border-radius: 5.597px;
+            font-weight: 500;
+            text-decoration: none;
+            font-family: goth;
+            font-size: 1.05em;
+            border: none;
+            cursor: not-allowed;
+            opacity: 0.6;
+        }
+        table-box{
+            width: cover;
+        }
+        
+@media (max-width: 1200px) and (min-width: 768px) {
+    .t-plan-box{
+        width: 95%;
+    }
+
+    .team-radio> p{
+        margin: 0  0 0 -4.5em  ;
+    }
+    .t-price-box{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+    }
+    .plan-info>ul{
+        font-size: .75em;
+    }  
+}
+@media (min-width: 1200px) {
+    .t-plan-box{
+        width: 30rem;
+    }
+    
+    .t-price-box{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5em;
+        justify-items: center;
+    }
+    .plan-info>ul{
+        font-size: .85em;
+    }  
+}
