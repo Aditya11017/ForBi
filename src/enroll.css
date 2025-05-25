@@ -1,0 +1,161 @@
+:root {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+
+}
+.enroll-container{
+    height: 100%;
+}
+
+.enroll-box{
+    display: flex;
+    justify-content: center;
+
+}
+.en-box{
+    margin: 5em 0 0 0;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+.en-form-box{
+    background: rgba(36, 36, 36, 0.452);
+    border-radius: .5em;
+    padding: 1em;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+}
+.fieldset-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .profile-field {
+    
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 1rem;
+    color: white;
+  }
+  
+  .profile-field legend {
+    font-size: 0.95rem;
+    color: #aaa;
+    margin-bottom: 0.75rem;
+  }
+  
+  .profile-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  
+  .profile-img {
+    width: 40px;
+    height: 40px;
+    background-color: #bbb;
+    border-radius: 50%;
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-name {
+    font-weight: bold;
+    font-size: 1rem;
+  }
+  
+  .profile-email {
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .form-grid fieldset {
+
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    padding: 0.75rem 1rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  
+  .form-grid legend {
+    font-size: 0.85rem;
+    color: #aaa;
+    margin-bottom: 0.5rem;
+  }
+  
+  .form-grid input {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+  }
+  
+  .form-grid .full {
+    grid-column: span 2;
+  }
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+  
+  .edit-button {
+    padding: 0.5rem 1rem;
+    background-color: #1f9b60;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #178c52;
+  }
+  
+  
+  .note {
+    font-size: 0.7rem;
+    color: #777;
+  }
+  .success-message {
+    background-color: #1f9b60;
+    color: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 500;
+    animation: fadeIn 0.4s ease-in;
+    text-align: center;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
