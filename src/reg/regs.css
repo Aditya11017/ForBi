@@ -1,0 +1,343 @@
+/* 🌐 Desktop Layout */
+.registration-box {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 5em; /* Match header height */
+  overflow: hidden;
+  scrollbar-width: none;
+}
+.registration-box::-webkit-scrollbar{
+  display: none;
+}
+.registration-container {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 480px;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  overflow: hidden;
+  align-items: start;
+  justify-items: center;
+}
+
+.registration-container p {
+  margin-bottom: 2em;
+}
+
+/* ✅ Scrollable batch list */
+.reges-box {
+  display: grid;
+  justify-items: center;
+  overflow-y: auto;
+  max-height: calc(100vh - 6em); /* Adjust height to leave space for header */
+  padding-right: 0.5em;
+  scrollbar-width: none;
+}
+.scroll-down-btn{
+    background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 0.3em;
+  transition: background 0.3s;
+}
+.scroll-down-btn:hover{
+  background: #22c55e;
+}
+.scroll-up-btn{
+    background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 0.3em;
+  transition: background 0.3s;
+}
+.scroll-up-btn:hover{
+  background: #22c55e;
+}
+/* ✅ Fixed Summary Box */
+.price-info {
+  position: sticky;
+  top: 5em; /* Same as header height */
+  align-self: start;
+
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  font-family: 'Segoe UI', sans-serif;
+  background: rgba(10, 10, 10, 0.65);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border: .005em solid rgba(255, 255, 255, 0.562);
+  color: #fff;
+  padding: 2rem;
+  margin-top: 2rem;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+}
+
+.price-info h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+  color: #fff;
+}
+.total-head {
+  text-align: center;
+  color: #d0d5d2;
+}
+.total-badge {
+  margin: -1em 0 0 0;
+  color: #22c55e;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.subtotol div,
+.subtotol p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.total-amt {
+  font-weight: bold;
+  font-size: 1.25em;
+  color: #d0d5d2;
+}
+.saving {
+  color: #22c55e;
+  font-weight: bold;
+}
+.discount-badge {
+  background-color: #01782c70;
+  color: #09e85b;
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.total-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffffff;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #ccc;
+}
+
+.checkout-btn {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 2rem;
+  background: #02ed7c;
+  color: rgb(42, 41, 41);
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.checkout-btn:hover {
+  background-color: #16a34a;
+}
+
+.terms {
+  font-size: 0.85rem;
+  color: #aaa;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.terms a {
+  color: #22c55e;
+  margin: 0 0.2rem;
+  text-decoration: none;
+}
+
+.info-tag {
+  text-align: center;
+}
+
+/* 🧾 Batch Cards */
+.batch-card-checkout {
+  display: flex;
+  background-color: #111111;
+  padding: 1rem;
+  margin: 0.5rem 0;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.batch-id-checkout {
+  font-weight: bold;
+  background-color: #2b2b2b;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  margin-right: 1rem;
+}
+
+.batch-details-checkout {
+  flex: 1;
+}
+.batch-name-checkout {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.batch-dates-checkout {
+  font-size: 0.9rem;
+  color: #aaa;
+}
+.batch-icons {
+  display: flex;
+  gap: 0.5rem;
+}
+.batch-icons .icon {
+  cursor: pointer;
+  font-size: 1rem;
+  color: #aaa;
+}
+
+.trash-btn {
+  background-color: transparent;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+  border-radius: 0.5em;
+}
+.trash-btn:hover {
+  background-color: rgba(255, 0, 0, 0.543);
+  transition: all 0.2s ease-in-out;
+}
+.trash-btn img {
+  height: 80%;
+  width: 80%;
+  object-fit: cover;
+}
+.btn-drop {
+  background-color: transparent;
+  height: 3em;
+  width: 3em;
+  cursor: pointer;
+  margin: 0 0 0 2em;
+  border-radius: 0.5em;
+}
+.btn-drop img {
+  height: 100%;
+  width: 30%;
+}
+.btn-drop:hover {
+  background-color: #2b2b2b;
+  transition: all 0.2s ease-in-out;
+}
+
+/* ➕ Add more link */
+.add-more {
+  text-align: center;
+  margin-top: 1rem;
+  text-decoration: underline;
+  font-size: 1.25em;
+  z-index: 100;
+}
+.add-more a {
+  color: #fff;
+}
+
+/* 💻 Tablet and Mobile Responsive */
+@media (max-width: 1020px) {
+  .registration-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 480px,1fr ;
+    padding: 1rem;
+  }
+
+  .registration-box {
+    height: auto;
+    padding-top: 5em;
+  }
+
+  .price-info {
+    position: static;
+    margin-top: 2rem;
+  }
+
+  .reges-box {
+    grid-row: 2/2;
+    max-height: none;
+    overflow-y: visible;
+  }
+  .scroll-down-btn{
+    display: none;
+  }.scroll-up-btn{
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .registration-box{
+    grid-template-rows: repeat(2,1fr);
+  }
+  .reges-box {
+    grid-row: 2/2;
+    padding: 2em 0 0 0;
+    margin: 1em;
+  }
+
+  .price-info {
+    grid-column: 1/1;
+    margin: 2em 1em 1em 1em;
+  }
+
+  .batch-card-checkout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .batch-icons {
+    position: absolute;
+    right: 4em;
+    margin: 0 0 0 3em;
+  }
+  .scroll-down-btn{
+    display: none;
+  }.scroll-up-btn{
+    display: none;
+  }
+}
+
+.batch-extra-details-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.4s ease;
+  opacity: 0;
+}
+
+.batch-extra-details-wrapper.open {
+  max-height: 300px; /* adjust based on content size */
+  opacity: 1;
+}
+
+.batch-extra-details {
+  margin-top: 1em;
+  background-color: #1c1c1c;
+  padding: 1em;
+  border-radius: 0.5em;
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}

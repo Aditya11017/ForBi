@@ -1,0 +1,74 @@
+.toggle-tab-bar {
+      display: flex;
+    background-color: #1e1e1e;
+    border-radius: 12px;
+    padding: 6px;
+    gap: 10px;
+    align-items: center;
+    margin: 1rem 0;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    flex-direction: row;
+    width: max-content;
+    justify-self: center;
+}
+
+.toggle-tab {
+  padding: 10px 18px;
+  border: none;
+  background: transparent;
+  color: #aaa;
+  font-size: 1.05em;
+  font-family: goth;
+  font-weight: 400;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.toggle-tab.active {
+  background: #2e2e2e;
+  color: white;
+}
+
+.badge {
+  font-size: 10px;
+  font-weight: bold;
+  background: white;
+  color: black;
+  padding: 2px 6px;
+  border-radius: 999px;
+}
+
+/* Wrapper that animates height */
+.tab-content-wrapper {
+
+   overflow: hidden; 
+  position: relative;
+}
+
+/* Stack content over each other */
+.tab-transition-container {
+  position: relative;
+}
+
+/* Each panel styled absolutely with fade-slide */
+.tab-content {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  opacity: 0;
+  transform: translateX(30px);
+  pointer-events: none;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tab-content.active {
+  opacity: 1;
+  transform: translateX(0);
+  pointer-events: auto;
+  position: relative;
+}

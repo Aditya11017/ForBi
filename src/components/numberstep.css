@@ -1,0 +1,100 @@
+/* === Base Layout === */
+.counter-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.counter-btn {
+  border-radius: 12px;
+  border: 1px solid var(--stepper-border, #333);
+  background: transparent;
+  color: var(--stepper-fg, #fff);
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .06s ease, background .2s ease, color .2s ease, border-color .2s ease;
+}
+
+.counter-btn.plus {
+  background: var(--stepper-accent, #000);
+  color: var(--stepper-accent-fg, #fff);
+}
+
+.counter-btn.minus {
+  background: transparent;
+  color: var(--stepper-minus-fg, #ccc);
+}
+
+.counter-btn:active {
+  transform: scale(0.96);
+}
+
+.counter-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.counter-value {
+  text-align: center;
+  font-weight: 600;
+  color: var(--stepper-text, #fff);
+}
+
+/* === Size Variants === */
+.stepper-sm .counter-btn {
+  width: 32px;
+  height: 32px;
+  font-size: 18px;
+}
+.stepper-sm .counter-value {
+  font-size: 14px;
+  min-width: 20px;
+}
+
+.stepper-md .counter-btn {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+}
+.stepper-md .counter-value {
+  font-size: 16px;
+  min-width: 24px;
+}
+
+.stepper-lg .counter-btn {
+  width: 48px;
+  height: 48px;
+  font-size: 22px;
+}
+.stepper-lg .counter-value {
+  font-size: 18px;
+  min-width: 28px;
+}
+
+/* === Mobile Responsive Tweaks === */
+@media (max-width: 480px) {
+  .counter-btn {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 22px !important;
+  }
+  .counter-value {
+    font-size: 18px !important;
+  }
+}
+
+/* === Very Small Phones === */
+@media (max-width: 360px) {
+  .counter-btn {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 25px !important;
+  }
+  .counter-value {
+    font-size: 25px !important;
+  }
+}

@@ -1,0 +1,184 @@
+/* Overall container */
+.admin-container {
+  overflow: hidden;
+}
+
+/* Grid layout */
+.admin-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  height: 100%;
+  padding: 5em 0;
+}
+
+/* Sidebar styles */
+.batch-nav {
+    grid-column: 1/1;
+  background: linear-gradient(to bottom, #161616, #1c1e1c);
+  list-style: none;
+  padding: 1em;
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  gap: 1em;
+  height: 100vh;
+  transition: transform 0.3s ease-in-out;
+}
+
+.batch-nav-itmes {
+  color: white;
+  padding: 0.75em 1em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.batch-nav-itmes:hover {
+  background-color: #2a2a2a;
+}
+
+/* Main content */
+.admin-panel {
+    grid-column: 2/2;
+  padding: 2em;
+  overflow-y: auto;
+}
+
+/* Toggle button */
+.sidebar-toggle {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  z-index: 10;
+  background: #1c1e1c;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 1.5rem;
+  border-radius: 0.3em;
+  display: none;
+}
+.dash-btn{
+  color: #35b26d;
+    background-color: transparent;
+  border: .005em solid #35b26d;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dash-btn:hover {
+  background-color: #2a9b5c;
+  color: white;
+
+}   
+
+/* Responsive (Mobile First) */
+@media (max-width: 768px) {
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .batch-nav {
+    position: fixed;
+    top: 7em;
+    left: 0;
+    transform: translateX(-100%);
+    width: 220px;
+    z-index: 1000;
+    height: 100vh;
+  }
+
+  .batch-nav.open {
+    transform: translateX(0);
+  }
+
+  .sidebar-toggle {
+    display: block;
+  }
+}
+
+/* Admin panel styling */
+.admin-panel {
+  color: #fff;
+  padding: 2em;
+  border-radius: 1em;
+  box-shadow: 0 0 12px rgba(0, 255, 128, 0.05);
+}
+
+/* Headings */
+.admin-panel h1 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+}
+
+.admin-panel h2 {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: #aaa;
+  margin-bottom: 2em;
+}
+
+/* Grid for batch cards */
+.batch-info-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5em;
+}
+
+@media (min-width: 600px) {
+  .batch-info-panel {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  .batch-info-panel {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Card styles */
+.active-batch-box,
+.batch-box,
+.seats-box {
+  background: #1c1c1c;
+  padding: 1.5em;
+  border-radius: 0.75em;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.05);
+}
+
+/* Count numbers */
+.active-batch-count,
+.batch-count,
+.seats-count {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin: 0.5em 0;
+}
+
+/* Button styling */
+
+.glass-card {
+  border-radius: 1em;
+  padding: 2em;
+  text-align: center;
+  box-shadow:
+    0 4px 20px rgba(0, 255, 170, 0.05),
+    0 0 10px rgba(0, 255, 170, 0.02),
+    inset 0 0 4px rgba(0, 255, 170, 0.05);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: scale(1.02);
+}
+
+/* Count glowing numbers */
+

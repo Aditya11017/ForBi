@@ -1,0 +1,298 @@
+/* Overall container */
+.batch-container {
+  overflow: hidden;
+}
+
+/* Grid layout */
+.batch-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  height: 100%;
+  padding: 5em 0;
+}
+.batch-panel {
+grid-column: 2;
+  padding: 2em;
+  overflow-y: auto;
+}
+@media (max-width: 768px) {
+    .batch-grid{
+    grid-template-columns: 1fr;
+    }
+  .batch-panel {
+    grid-column: 1;
+  }
+}
+.batch-tag-list{
+        display: flex;
+    flex-direction: row;
+    gap: 1em;
+      overflow: scroll; 
+    -webkit-overflow-scrolling: touch; 
+    align-items: start;
+    scrollbar-width: none;
+     -ms-overflow-style: none;
+}
+.batch-tag-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+}
+.batch-tag-item{
+    margin: 1.5em 0 ;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-size: .95em;
+    color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5em;
+    border: .005em solid rgba(255, 255, 255, 0.3);
+    background: rgba(44, 49, 46, 0.534);
+    transition: background-color 0.3s ease-in-out;
+}
+.batch-tag-item:hover{
+    background-color: rgba(35, 178, 109, 0.534);
+    color: white;
+    border: .005em solid rgba(255, 255, 255, 0.3);
+    font-weight: 600;
+}
+
+.batch-tag-item.active {
+  background-color: #23b26d;
+  color: white;
+  font-weight: 600;
+}
+
+.new-btn {
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 1.25em;
+  color: white;
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgba(35, 178, 109, 0.945);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  position: absolute;
+  top: 5em;
+  right: 2em;
+  width: 15em;
+  box-shadow: 0 0 0 rgba(35, 178, 109, 0);
+}
+
+/* Elegant hover glow */
+.new-btn:hover {
+  background-color: rgb(5, 251, 132);
+  box-shadow: 0 0 12px rgba(35, 178, 109, 0.4);
+  transform: translateY(-2px);
+  color: #000;
+}
+
+.batch-list-panel {
+display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  padding: 1rem;
+  justify-items: center;
+}
+
+.batch-list-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.75rem;
+  padding: 1.25rem 1.5rem;
+  background: #1a1a1a;
+  color: #fff;
+  width: 100%;
+  max-width: 1000px;
+  gap: 1.5rem;
+}
+.exl{
+    border: 1px solid #1ec47d;
+}
+.pwrbi{
+    border: 1px solid #bd972d;
+}
+.py{
+    border: 1px solid #348bd2;
+}
+.sql{
+    border: 1px solid #3bbecd;
+}
+.batch-actions {
+  display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.batch-action-btn {
+  background-color: transparent;
+  padding: 6px 16px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.exl-btn {
+  color: #1ec47d;
+  border: 1px solid #1ec47d;
+}
+.exl-btn:hover {
+  background-color: #1ec47d;
+  color: #000;
+}
+
+.pwrbi-btn {
+  color: #bd972d;
+  border: 1px solid #bd972d;
+}
+.pwrbi-btn:hover {
+  background-color: #bd972d;
+  color: #000;
+}
+.py-btn {
+  color: #348bd2;
+  border: 1px solid #348bd2;
+}
+.py-btn:hover {
+  background-color: #348bd2;
+  color: #fff;
+}
+.sql-btn {
+  color: #3bbecd;
+  border: 1px solid #3bbecd;
+}
+.sql-btn:hover {
+  background-color: #3bbecd;
+  color: #000;
+}   
+/* Time */
+.time {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25rem;
+  font-weight: 600;
+  
+white-space: nowrap;
+}
+.time span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #bbb;
+  margin-top: 0.25rem;
+
+}
+
+/* Duration badge */
+.batch-duration {
+  background-color: #333;
+  color: #fff;
+  padding: 0.3rem 0.7rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+white-space: nowrap;
+}
+.batch-duration span {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #bbb;
+  margin-top: 0.25rem;
+}
+
+/* Batch ID + Name */
+.batch-id {
+  font-weight: 600;
+  font-size: 1.1rem;
+  
+white-space: nowrap;
+}
+.batch-id span {
+  font-size: 0.9rem;
+  color: #bbb;
+  margin-bottom: 0.25rem;
+  font-family: "goth";
+}
+.batch-name {
+  font-size: 1.25rem;
+  font-weight: 700;
+    white-space: nowrap;
+}
+.batch-date {
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+/* Participants (Seats available) */
+.batch-participants {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+.batch-participants::before {
+  content: "Seats Available";
+  font-size: 0.75rem;
+  color: #ccc;
+  margin-bottom: 0.3rem;
+    white-space: nowrap;
+}
+.batch-price::before {
+  content: "Price";
+  font-size: 0.75rem;
+  color: #ccc;
+  margin-bottom: 0.3rem;
+}
+.batch-price {
+
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Buttons hidden as per visual design, optional */
+@media (max-width: 1000px) {
+    .batch-list-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* Optional: responsive */
+@media (max-width: 768px) {
+    .batch-list-panel{
+        display: grid;
+        
+    }
+  .batch-list-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .batch-participants {
+    align-self: self-start;
+  }
+}
+.mrp-lable {
+  font-size: 0.65em;
+  color: #bbb;
+  text-decoration: line-through;
+}
+.discount-lable {
+  font-size: .75em;
+  color: #333;
+  background: #1ec47d;
+  padding: .15em;
+  margin: 0 0 0 -.095em;
+  border-radius: 0.25em;
+  white-space: nowrap;
+}
+.discount-lable::after {
+content: "Off";
+  font-size: .85em;
+  color: #333;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
