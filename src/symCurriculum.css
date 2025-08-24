@@ -1,0 +1,115 @@
+.curriculum-container {
+    background: #0b0b0b;
+    color: #ffffff;
+    
+    border-radius: .5em;
+    padding: 1rem;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+  }
+  
+  /* Accordion Header */
+  .section-header {
+    background: #111;
+    border: 1px solid #222;
+    padding: 0.75rem 1rem;
+    border-radius: .5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+    transition: background 0.2s ease;
+  }
+  
+  .section-header.expanded {
+    background: #161616;
+  }
+  
+  .section-header h3 {
+    margin: 0;
+    color: white;
+    font-size: 16px;
+  }
+  
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .toggle {
+    font-size: 1.25em;
+    color: #fff;
+  }
+  
+  
+  /* Accordion Content */
+  .section-content-wrapper {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.4s ease;
+  }
+  
+  .section-content-wrapper.open {
+    max-height: 1000px; /* large enough to show all content */
+  }
+  
+  .section-content {
+    padding: 0.5rem 1rem 1rem;
+    border-left: 2px solid #222;
+    margin-bottom: 1rem;
+  }
+  
+  /* Description */
+  .module-description {
+    font-size: 14px;
+    color: #bbb;
+    margin-bottom: 1rem;
+  }
+  
+  /* Resources */
+  .resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .resource-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #1a1a1a;
+    font-size: .95em;
+    color: #23b26d;
+    transition: background 0.2s;
+  }
+  
+  .resource-item:hover {
+    background-color: #111;
+  }
+  
+  .resource-item .icon {
+    font-size: 1.25em;
+  }
+  
+  .resource-item .label {
+    color: white;
+    text-decoration: none;
+  }
+  
+  
+  /* Assignment card */
+  .assignment-card {
+    margin-top: 1rem;
+    background: #111;
+    padding: 1rem;
+    border-left: 5px solid #23b26d;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #23b26d;
+  }
+  

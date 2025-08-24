@@ -1,0 +1,330 @@
+/* =========================
+   Admin Layout – FULL CSS
+   ========================= */
+
+/* Overall container */
+/* ====== Admin Dashboard (match reference look) ====== */
+
+/* container/grid already defined elsewhere; this only styles the panel + tiles */
+.admin-panel {
+  grid-column: 2/2;
+  color: #fff;
+  padding: 4.25rem 1.5rem 2rem;
+  border-radius: 18px;
+}
+.admin-title{
+  position: absolute;
+  left: 3em;
+  top: 1em;
+  text-decoration: none;
+    color: white;
+    white-space: nowrap;
+    font-size: 1rem;
+    font-weight: 900;
+    font-size: 1.2rem;
+}
+/* Header */
+.admin-panel h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0 0 .25rem;
+}
+.admin-panel h2 {
+  font-size: .95rem;
+  font-weight: 500;
+  color: #a8a8a8;
+  margin: 0 0 1rem;
+}
+
+/* Top "glass" strip look for blocks */
+.glass-card {
+  border-radius: 18px;
+  background: #0f1010;
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+
+/* 3 metric tiles layout */
+.batch-info-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(220px, 1fr));
+  gap: 1rem;
+  padding: .9rem;
+  background: linear-gradient(180deg, rgba(22,22,22,.85), rgba(18,18,18,.85));
+  backdrop-filter: blur(6px);
+}
+
+/* Individual tiles – match card style */
+.active-batch-box,
+.batch-box,
+.seats-box {
+  background: #111214;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: 16px;
+  padding: 1rem;
+  box-shadow: inset 0 0 0 0 rgba(255,255,255,0);
+  transition: transform .15s ease, box-shadow .25s ease, background .2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+  text-align: left;            /* left align like the screenshot */
+}
+
+/* Hover lift like reference tiles */
+.active-batch-box:hover,
+.batch-box:hover,
+.seats-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(0,0,0,.3);
+  background: #151617;
+}
+
+/* Title text inside tiles (your plain text) */
+.active-batch-box,
+.batch-box,
+.seats-box {
+  font-size: .95rem;
+  color: #cfcfcf;
+}
+
+/* Big numbers */
+.active-batch-count,
+.batch-count,
+.seats-count {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1.1;
+  margin: 0;
+}
+
+/* CTA button (pill) */
+.dash-btn{
+  align-self: flex-start;
+  margin-top: .25rem;
+  color: #121212;
+  background: #f7c948;
+  border: 1px solid rgba(255,255,255,.08);
+  padding: .45rem .85rem;
+  font-size: .85rem;
+  font-weight: 700;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+.dash-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(247,201,72,.25);
+}
+
+/* Badges / small counters (if you add later) */
+.badge-dot {
+  width: 9px; height: 9px; border-radius: 999px; display: inline-block;
+}
+
+/* ====== Responsive ====== */
+
+/* ≤1024px */
+@media (max-width:1024px){
+  .batch-info-panel{
+    grid-template-columns: repeat(3, 1fr);
+    gap: .85rem;
+  }
+  .active-batch-count, .batch-count, .seats-count{ font-size: 1.8rem; }
+}
+
+/* ≤720px */
+@media (max-width:720px){
+  .batch-info-panel{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ≤600px */
+@media (max-width:600px){
+  .admin-panel{ padding: 1rem; }
+  .batch-info-panel{
+    grid-template-columns: 1fr;
+    gap: .8rem;
+    padding: .75rem;
+  }
+  .active-batch-count, .batch-count, .seats-count{ font-size: 1.7rem; }
+}
+
+/* =========================
+   Sidebar
+   ========================= */
+.batch-nav {
+  /* layout / position */
+  grid-column: 1/1;
+  position: fixed;
+  top: 3.75rem;             /* sit below any top header */
+  left: 1.25rem;            /* inset like reference */
+  width: 248px;
+  height: calc(100vh - 6rem);
+  overflow-y: auto;
+
+  /* visuals */
+  list-style: none;
+  padding: 0.9rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-radius: 16px;
+  background: linear-gradient(180deg, #161616, #1a1b1a);
+  border: 1px solid rgba(255,255,255,.06);
+  box-shadow: 0 8px 28px rgba(0,0,0,.35);
+  z-index: 100;
+  /* motion */
+  transform: translateX(0);
+  opacity: 1;
+  transition: transform .28s ease-in-out, opacity .2s ease-in-out;
+}
+
+/* Closed state — applies on ALL screens */
+.batch-nav:not(.open) {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+
+/* Nav item pills */
+.batch-nav-itmes {
+  position: relative;
+  color: rgba(255,255,255,.9);
+  padding: .75rem .95rem .75rem 2.6rem; /* left room for dot */
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: .95rem;
+  line-height: 1;
+  transition: background-color .18s ease, color .18s ease, transform .12s ease;
+  outline: none;
+}
+.batch-nav-itmes:hover { background: #242624; }
+.batch-nav-itmes.active {
+  background: #ffffff;
+  color: #0e0e0e;
+}
+
+/* Small circular “icon dots” like the ref */
+.batch-nav-itmes::before{
+  content: "";
+  position: absolute;
+  left: .85rem; top: 50%;
+  transform: translateY(-50%);
+  width: 22px; height: 22px;
+  border-radius: 999px;
+  background: #303230;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.06);
+}
+
+/* Accent colors per item (keeps your text & DOM) */
+.batch-nav a:nth-child(1) .batch-nav-itmes::before { background:#6ecb8a; } /* Dashboard */
+.batch-nav a:nth-child(2) .batch-nav-itmes::before { background:#c9a54e; } /* Batches */
+.batch-nav > li:nth-child(3)::before { background:#6aa8ff; }              /* Students */
+.batch-nav > li:nth-child(4)::before { background:#ef7d7d; }              /* Manage user in Batch */
+
+/* =========================
+   Main content panel
+   ========================= */
+
+/* =========================
+   Global Toggle Button – always visible
+   ========================= */
+.sidebar-toggle {
+  position: fixed;
+  top: .5rem;
+  left: .6rem;
+  z-index: 1001;
+  background: #1c1e1c;
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,.08);
+  padding: .45rem .55rem;
+  font-size: 1.15rem;
+  border-radius: 10px;
+  display: block;           /* always visible */
+  box-shadow: 0 6px 18px rgba(0,0,0,.25);
+  cursor: pointer;
+}
+.sidebar-toggle:hover { background:#222523; }
+
+/* Optional CTA button style you already use */
+.dash-btn{
+  color: #35b26d;
+  background-color: transparent;
+  border: .005em solid #35b26d;
+  padding: 0.5em 1em;
+  font-size: 1rem;
+  border-radius: 0.3em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.dash-btn:hover { background-color: #2a9b5c; color: #fff; }
+
+/* =========================
+   Dashboard cards grid (kept)
+   ========================= */
+.batch-info-panel { display: grid; grid-template-columns: 1fr; gap: 1.5em; }
+@media (min-width: 600px) { .batch-info-panel { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 900px) { .batch-info-panel { grid-template-columns: repeat(3, 1fr); } }
+
+.active-batch-box, .batch-box, .seats-box{
+  background: #1c1c1c;
+  padding: 1.5em;
+  border-radius: 0.75em;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0, 255, 128, 0.05);
+}
+
+.active-batch-count, .batch-count, .seats-count{
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fff;
+  display: block;
+  margin: 0.5em 0;
+}
+
+/* Glass card (kept) */
+.glass-card{
+  border-radius: 1em;
+  padding: 2em;
+  text-align: center;
+  box-shadow:
+    0 4px 20px rgba(0, 255, 170, 0.05),
+    0 0 10px rgba(0, 255, 170, 0.02),
+    inset 0 0 4px rgba(0, 255, 170, 0.05);
+  backdrop-filter: blur(8px);
+  transition: transform 0.2s ease;
+}
+.glass-card:hover { transform: scale(1.02); }
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+/* ≤1024px – slightly narrower sidebar */
+@media (max-width: 1024px){
+  .admin-grid{ grid-template-columns: 220px 1fr; }
+  .batch-nav{ width: 220px; left: .9rem; }
+}
+
+/* ≤720px – behave like a drawer from the edge */
+@media (max-width: 720px){
+  .admin-grid{ grid-template-columns: 1fr; }
+
+  .batch-nav{
+    top: 6rem;
+    left: 0;
+    height: calc(100vh - 6rem);
+    width: 240px;
+    border-radius: 0 16px 16px 0;
+  }
+
+  /* closed state already covered by :not(.open) */
+}
+
+/* ≤600px – tighter paddings */
+@media (max-width: 600px){
+  .admin-panel{ padding: 1.25rem; }
+  .batch-nav{ width: 224px; }
+}

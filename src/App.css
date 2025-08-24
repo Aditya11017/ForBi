@@ -1,0 +1,543 @@
+
+
+@media print {
+  /* Your white page styles for printing */
+  body {
+    background: white; /* White background */
+    color: black;          /* Black text */
+  }
+}
+
+@page {
+  size: A4; /* Set paper size (or any other desired size) */
+  margin: 1cm; /* Set margins (or other desired margins) */
+  /* Add other print layout properties as needed */
+}
+ul,li{
+  list-style: none;
+  text-decoration: none;
+}
+.marquee-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 150px; /* Adjust height to fit your images */
+  background: white;
+}
+
+.marquee {
+  display: flex;
+  animation: scroll 35s linear infinite;
+  align-items: center;
+}
+
+.reverse {
+  display: flex;
+  animation: scroll 20s linear infinite reverse;
+  align-items: center;
+  gap:2em;
+}
+.marquee img {
+  height: 100%;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0%);
+  }
+  100% {
+      transform: translateX(-50%);
+  }
+}
+
+/* Faded edges */
+.marquee-container::before,
+.marquee-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 200px;
+  pointer-events: none;
+  background: linear-gradient(to right, white, rgba(255, 255, 255, 0));
+  z-index: 1;
+}
+
+.marquee-container::after {
+  right: 0;
+  left: auto;
+  transform: rotate(180deg);
+}
+.Tech-img{
+  padding: 0 1rem;
+}
+.btn{
+  text-decoration: none;
+  border: none;
+
+}
+.main-btn{
+  border: none;
+  background: #1f9b60ff;
+  color: white;
+  font-family: goth-mid;
+  font-size: .95rem;
+  padding: .75rem 1.90rem;
+  border-radius: 5.597px;
+  font-weight: 300;
+  font-family: goth-thin;
+}
+.main-btn:hover{
+  border: none;
+  background: rgb(35, 178, 109);
+  color: white;
+  font-family: goth-mid;
+  font-weight: 900;
+  font-size: .95rem;
+  padding: .75rem 1.90rem;
+  border-radius: 5.597px;
+  font-weight: 550;
+  transition: 0.3s ease-in;
+  filter: drop-shadow(
+            1px 2px 4px hsl(151, 67%, 42%)
+          );
+}
+
+
+
+
+/* Arrow Icon */
+.button::after {
+  font-size: 16px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.train-btn{
+  border:  2px solid white;
+  color: white;
+  background: transparent;
+  font-family: goth-mid;
+  font-size: .95rem;
+  padding: .75rem 1.45rem;
+  border-radius: 5.597px;
+  font-weight: 300;
+  font-family: goth-thin;
+
+  text-decoration: none;
+  cursor: pointer;
+          z-index: 1;
+}
+.train-btn:hover{
+  border:  2px solid #1f9b60ff;
+  color: #1f9b60ff;
+  font-family: goth-mid;
+  font-size: .95rem;
+  padding: .75rem 1.45rem;
+  border-radius: 5.597px;
+  font-weight: 600;
+  transition: .4s ease-in;
+  text-decoration: none;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+          
+}
+.train-btn::after{
+  content: "→";
+  font-size: .95rem;
+  transition: transform 0.3s ease-in-out;
+}
+.train-btn:hover::after {
+  transform: translateX(15px);
+}
+.sym-btn{
+  border:  2px solid white;
+  color: white;
+  background: transparent;
+  font-family: goth-mid;
+  font-size: 1.5rem;
+  padding: .75rem 1.45rem;
+  margin: 1em;
+  border-radius: 5.597px;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+          z-index: 1;
+}
+.sym-btn:hover{
+  border:  2px solid #1f9b60ff;
+  color: #1f9b60ff;
+  font-family: goth-mid;
+  font-size: 1.5rem;
+  padding: .75rem 1.45rem;
+  border-radius: 5.597px;
+  font-weight: 600;
+  transition: .4s ease-in;
+  text-decoration: none;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+          
+}
+.sym-btn::after{
+  content: "→";
+  font-size: 25px;
+  transition: transform 0.3s ease-in-out;
+}
+.sym-btn:hover::after {
+  transform: translateX(15px);
+}
+  .intro-box{
+    text-align: center;
+    background:url("assets/images/fblback.svg");
+    margin: .5em;
+    border-radius: 5.597px;
+    background-repeat: no-repeat;
+    align-items: center;
+    }
+
+.intro{
+  padding: .9rem;
+  margin: -.9rem .9rem -1.9rem .9rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+.vid-box{
+  width: 90%;  /* Adjust width as needed */
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    aspect-ratio: 16 / 9;
+    border-radius: 10.879px;
+    margin: 2.5em 2.5em 2.5em 1.5em;
+}
+.fbl-intro{
+  width: 100%;
+    height: 100%;
+  object-fit: cover;
+}
+.thumbnail{
+  
+  width: 100%;
+    height: 100%;
+  object-fit: cover;
+}
+.thumb-btn{
+  border: 1px solid #181818ff;
+  position: absolute;
+   inset: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+  width:100%;
+  height: 100%;
+  background:hsla(0, 0%, 0%, 0.418);  
+ color: white;
+ font-weight: bold; 
+ cursor:pointer;
+ border-radius: 10.879px;
+ font-size: 3rem;
+}
+.play-btn{
+  background-color: rgba(0, 0, 0, 0.263);
+  border-radius: 50%;
+  padding: .25em .5em;
+  margin: 0 0 0 .15em;
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+          backdrop-filter: saturate(180%) blur(20px);
+}
+.cont-btn{
+  border: none;
+  background: #1f9b60ff;
+  color: white;
+  font-family: goth;
+  font-size: 1.5rem;
+  padding: .75rem 1.90rem;
+  border-radius: 5.597px;
+  font-weight: 100;
+}
+.cont-btn:hover{
+  border: none;
+  background: #1f9b60ff;
+  color: white;
+  font-family: goth;
+  font-size: 1.5rem;
+  padding: .75rem 1.90rem;
+  border-radius: 5.597px;
+  font-weight: 500;
+  transition: .4s ease-in;
+}
+.plan-img{
+  width: 80%;
+    height: 80%;
+    object-fit: cover;
+    padding: .7rem;
+}
+.list-box{
+  background: rgb(18, 18, 18);
+  border-radius: 10.879px;
+  margin: 1.5rem;
+  padding: 1.5rem;
+}
+.team-list {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+  text-align: start;
+}
+
+.team-list > li {
+  display: flex;
+  align-items: start;     /* ensures image and text align vertically */
+  margin: 0 0 1em 0;
+}
+
+.team-tick-icon{
+  width: 1em;
+  height: 1em;
+  margin: 0.25em 0.75rem 0  0;
+  flex-shrink: 0;
+}
+
+    .carousel {
+      position: relative;
+      width: 18.75rem;
+      height:10.125rem;
+      overflow: hidden;
+      margin: 50px auto;
+      text-align: center;
+      line-height: 50px;
+      font-family: goth-mid;
+      font-size: 2.25em;
+      font-weight: 500;
+    }
+    
+    .slide {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+    
+    .slide.active {
+      opacity: 1;
+    }
+    
+    .text-center{
+      text-align: center;
+    }
+   .gradient-text {
+  /* 1) your gradient colors/direction */
+  background: linear-gradient(90deg, #d0d4dd 0%, #8a8e98 100%);
+  /* 2) clip the background to the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+  /* 3) make the text itself transparent so you see the background */
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  /* optional: adjust size & weight */
+  font-weight: 900;
+}
+.an-btn{
+  justify-self: center
+}
+
+  /* Tablet screens */
+@media (max-width: 1200px) and (min-width: 768px) {
+  .intro-box{
+    text-align: center;
+    align-items: center;
+  }
+  .carousel {
+    position: relative;
+    width: 38.75rem;
+    height:10.125rem;
+    margin: 40px auto;
+
+  }
+}
+
+/* Desktop screens */
+@media (min-width: 1200px) {
+  .carousel {
+    position: relative;
+    width: 38.75rem;
+    height:10.125rem;
+    margin: 70px auto;
+  }
+  .vid-box{
+    width: 170%;
+  }
+  .hero-btn{
+    justify-content: center;
+    grid-column: 1/3 ;
+  }
+}
+@media only screen and (max-device-width: 950px) and (orientation: landscape) {
+  /* Styles for phones, including iPhone 5, in landscape */
+  .main-title{
+    font-size: 1.65em;
+  }
+  .sub-head{
+    font-size: .55em;
+  }
+  .carousel {
+    position: relative;
+    width: 18.75rem;
+    height:10.125rem;
+    overflow: hidden;
+    margin: 10px auto;
+    text-align: center;
+    line-height: 50px;
+    font-family: goth-mid;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  .main-btn{
+    padding: .75rem 1rem;
+    font-size: .95em;
+    height: 35%;
+
+  }.train-btn{
+    padding: .25rem 1rem 1.25rem 1rem;
+    font-size: .95em;
+    height: 30%;
+
+  }
+  .an-btn{
+  justify-self: center
+}
+.hero-btn{
+    justify-content: center;
+    grid-column: 1/3 ;
+  }
+}
+@media only screen and (max-device-width: 820px) and (orientation: landscape) {
+  /* Styles for phones, including iPhone 5, in landscape */
+  .main-title{
+    font-size: 1.65em;
+  }
+  .sub-head{
+    font-size: .55em;
+  }
+  .carousel {
+    position: relative;
+    width: 18.75rem;
+    height:10.125rem;
+    overflow: hidden;
+    margin: 10px auto;
+    text-align: center;
+    line-height: 50px;
+    font-family: goth-mid;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  .main-btn{
+    padding: .75rem 1rem;
+    font-size: .95em;
+    height: 35%;
+
+  }.train-btn{
+    padding: .25rem 1rem 1.25rem 1rem;
+    font-size: .95em;
+    height: 30%;
+
+  }
+  .hero-btn{
+    justify-content: center;
+    grid-column: 1/3 ;
+  }
+}
+
+@media only screen and (max-device-width: 600px) and (orientation: landscape) {
+  /* Styles for phones, including iPhone 5, in landscape */
+  .main-title{
+    font-size: 1.65em;
+  }
+  .sub-head{
+    font-size: .55em;
+  }
+  .carousel {
+    position: relative;
+    width: 18.75rem;
+    height:10.125rem;
+    overflow: hidden;
+    margin: 10px auto;
+    text-align: center;
+    line-height: 50px;
+    font-family: goth-mid;
+    font-size: 1.5em;
+    font-weight: 500;
+  }
+  .main-btn{
+    padding: .75rem 1rem;
+    font-size: .95em;
+    height: 35%;
+
+  }.train-btn{
+    padding: .25rem 1rem 1.25rem 1rem;
+    font-size: .95em;
+    height: 30%;
+
+  }
+  .an-btn{
+  justify-self: center
+}
+.hero-btn{
+    justify-content: center;
+    grid-column: 1/3 ;
+  }
+}
+
+@media only screen and (max-device-width: 500px) and (orientation: landscape) {
+  .hero-section{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 1.95em 0 0 0;
+  }
+  .link-section{
+    margin: -4.5em 0 0 0 ;
+    display: flex;
+    flex-direction: row;
+    gap: .75rem;
+justify-content: center;
+grid-column: 1/2;
+  }
+  /* Styles for phones, including iPhone 5, in landscape */
+ 
+.hero-btn{
+    justify-content: center;
+    grid-column: 1/3 ;
+  }
+}
+.elt-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+max-width: 50%;
+  min-height: 20em;
+  padding: 2.5em 2em;
+  margin: 2em 1em;
+  border-radius: 2.5em;
+border: 2px solid rgba(31, 31, 31, 0.71);
+  /* Main gradient background (center lighter, edges darker) */
+  background: radial-gradient(circle at 5% 70%, #000000 0%, #0f0f0f 80%, #000000 100%);
+
+  /* Outer glow */
+  box-shadow:
+    0 8px 32px 0 rgba(0,0,0,0.60),
+    0 1.5px 3px rgba(255,255,255,0.08) inset;
+
+  /* Glassy effect (optional) */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+
+  text-align: center;
+  color: #fff;
+}
+

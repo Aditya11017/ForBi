@@ -1,0 +1,331 @@
+:root {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #1f9b60ff;
+}
+.live-session-container{
+    height: 100%;
+
+}
+
+
+.live-s-box{
+        display: grid;
+    justify-items: center;
+margin:5.5em 0 0 0;
+}
+.live-s-box p{
+    padding: 0  1em 0 0;
+    word-wrap: break-word;
+overflow-wrap: break-word;
+white-space: normal;
+width: 80%;
+text-align: center;
+}
+.session-scroll-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.session-info-bar {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  white-space: nowrap;
+  padding: 1em 0;
+  flex: 1;
+}
+
+.session-info-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.batch-tag-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  list-style: none;
+  padding: 0 1em;
+  margin: 0;
+  white-space: nowrap;
+  min-width: max-content; /* ✅ ensures it overflows */
+}
+.batch-tag-list-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 1.05em;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5em;
+  border: 0.05em solid rgba(255, 255, 255, 0.3);
+  background: rgba(44, 49, 46, 0.534);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.batch-tag-list-item:hover,
+.batch-tag-list-item.active {
+  background-color: rgba(35, 178, 109, 0.534);
+  color: white;
+  font-weight: 600;
+}
+
+.scroll-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 0.3em;
+  transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(35, 178, 109, 0.9);
+}
+
+.scroll-btn.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-btn.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+
+.batch-tag-list {
+  display: flex;
+  justify-content: center;
+  gap: 1em;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.batch-tag-item {
+  scroll-snap-align: start;
+  flex: 0 0 auto;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  font-size: 1.05em;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5em;
+  border: 0.05em solid rgba(255, 255, 255, 0.3);
+  background: rgba(44, 49, 46, 0.534);
+  transition: background-color 0.3s ease-in-out;
+}
+
+.batch-tag-item:hover,
+.batch-tag-item.active {
+  background-color: rgba(35, 178, 109, 0.534);
+  color: white;
+  font-weight: 600;
+}
+
+/* Scroll Buttons */
+.scroll-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.25em 0.5em;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 0.3em;
+  transition: background 0.3s;
+}
+
+.scroll-btn:hover {
+  background-color: rgba(35, 178, 109, 0.9);
+}
+
+.scroll-btn.left {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.scroll-btn.right {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.live-session-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.live-session-box{
+  display: flex;
+  flex-direction: column;
+
+}
+.live-batch-box{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 5em; 
+    margin: 2em;
+}
+.batch-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1rem;
+}
+
+.session-btn-view{
+    font-size: 1.05rem;
+    padding: 0.5em 1.5em;
+    border-radius: 0.5em;
+    color: white;
+    background-color: transparent;
+    cursor: pointer;
+}
+.session-btn-view:hover{
+    color: #000;
+    transition: .4s ease-in;
+}
+
+.session-btn-reg{
+    font-size: 1.05rem;
+    padding: 0.5em 1.5em;
+    border-radius: 0.5em;
+    cursor: pointer;
+}
+.session-btn-reg:hover{
+    color: white;
+    transition: .4s ease-in;
+}
+.session-dropdown {
+  display: flex;
+  gap: 1.5em;
+  padding: 1em 0;
+}
+.cart-div{
+  display: flex;
+  justify-items: start;
+  border: .005em solid rgba(255, 255, 255, 0.646);
+  padding: .5em 1em;
+  border-radius: .75em;
+  align-items: center;
+  margin: .65em;
+  gap: .5em;
+      background: rgba(24, 24, 24, .25);
+  -webkit-backdrop-filter: saturate(180%) blur(20px);
+  backdrop-filter: saturate(180%) blur(20px);
+  border:.005em solid rgba(255, 255, 255, 0.562);
+}
+.cart-div h2{
+  border-radius: 50%;
+  background: #29a66ac9;
+  color: white;
+  padding: .20em .5em;
+}
+.info-lable{
+  position: absolute;
+  top: 1em;
+  left: .75em;
+  font-size: .75em;
+  color: aliceblue;
+  white-space: nowrap;
+  margin-bottom: 1.25em;
+}
+.cart-info{
+    position: relative;
+    color:#4adc7d;
+    border: none;
+    cursor: pointer;
+    border-radius: .5em;
+    white-space: nowrap;
+    background: #02271590;
+    padding: .75em;
+}
+.cart-btn{
+  background: #4adc7d;
+  color: rgba(24, 24, 24);
+  border-radius: .25em;
+  text-align: center;
+  padding: .5em .75em;
+  font-weight: 500;
+  
+}
+@media (max-width: 1000px) {
+    .session-dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+@media (max-width: 700px) {
+  .session-dropdown{
+    flex-direction: column;
+  }
+  .cart-div{
+    flex-direction: column;
+  }
+}
+}
+@media (max-width: 500px) {
+    .session-dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;   
+}
+.cart-div{
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+.cart-info:first-of-type {
+  margin: 3em 0 0 0;
+}
+} 
+.live-session-filter-card-box{
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; /* Ensures spacing between cards */
+  padding: .5em 1rem 1rem 1rem;
+  width: 90%;
+  box-sizing: border-box;
+  justify-items: center;
+}
+.fillter-title{
+    margin: 2em 0 -2em 0;
+    padding: 2em 0 0em 0;
+}
+.live-session-card-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; /* Ensures spacing between cards */
+  padding: .5em 1rem 1rem 1rem;
+  width: 90%;
+  box-sizing: border-box;
+  justify-items: center;
+}

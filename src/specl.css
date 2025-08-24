@@ -1,0 +1,74 @@
+:root {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+
+}
+a{
+    text-decoration: none;
+    color: #1f9b60ff;
+}
+.spl-container{
+    height: 100%;
+}
+
+.spl-box{
+    display: flex;
+    justify-content: center;
+}
+.sl-box{
+    margin: 5em 0 0 0;
+    padding: 2rem 1.5rem;
+    width: 100%;
+}
+.sl-box >h1{
+    text-align: center;
+} 
+.sl-box >p{
+        text-align: center;
+}
+.sl-note> a:hover{
+    text-decoration: underline;
+    text-underline-offset: .35rem;
+    text-decoration: underline white;
+}
+.sl-note> a::before {
+    content: "→";
+    margin-right: 0.5em;
+    color: #1f9b60ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+.sl-box >.sl-note{
+    justify-self:  center;
+    
+}
+.sl-note{
+    background-color: #232323ff;
+    width: 50%;
+    font-style: italic;
+    font-family: goth-thin;
+    border-radius: .5em;
+    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    padding: 1em;
+    margin: 1.5em 0 0 0;
+    font-size: 1.05em;
+    font-weight: 700;
+}
+.sl-qt {
+    position: absolute;
+    z-index: 1;
+    height: 3.5em;
+    width: 3.5em;
+    margin-top: -2em;
+    margin-left: -3.35em;
+}
+.sl-qt > img{
+    height: 100%;
+    width: 100%;
+}

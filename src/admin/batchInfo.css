@@ -1,0 +1,94 @@
+/* Batch Info – no :root variables */
+
+.bi-container{
+  width:100%;
+  color: #f2f3f7;
+  overflow: hidden;
+}
+.bt-box
+{
+    margin: 3em auto;
+    padding: 1em;
+}
+.card{
+  background: #101111;
+  border:1px solid #24262e;
+  border-radius:18px;
+  padding:14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+
+.bi-header{ margin: 0 0 12px }
+.bi-back{
+  display:inline-block; margin-bottom:.25rem; color:#8b90a3;
+  border:1px solid #24262e; border-radius:10px; padding:.25rem .5rem;
+  text-decoration:none;
+}
+.bi-back:hover{ background: rgba(255,255,255,.04) }
+
+.bi-title{ display:flex; gap:10px; align-items:center }
+.bi-title h1{ margin:0; font-size:1.4rem }
+.bi-sub{ margin-top:.25rem; display:flex; gap:16px; color:#8b90a3; font-size:.95rem }
+.bi-id{ background: rgba(255,255,255,.04); border:1px solid #24262e; padding:.15rem .5rem; border-radius:999px }
+
+.bi-status{
+  border-radius:999px; padding:.2rem .55rem; font-size:.8rem;
+  border:1px solid #24262e; background: rgba(255,255,255,.04);
+}
+.bi-status.active{ color:#23b26d }
+.bi-status.upcoming{ color:#ffc92a }
+.bi-status.completed{ color:#8c6cff }
+.bi-status.cancelled{ color:#e05e5e }
+
+.bi-grid{
+  display:grid; grid-template-columns: 2fr 1.2fr 1fr; gap:14px; margin-bottom:14px;
+}
+
+/* Cards */
+.bi-card h3{ margin:.25rem 0 8px }
+.bi-row{ display:flex; gap:22px; flex-wrap:wrap }
+.bi-label{ display:block; color:#8b90a3; font-size:.85rem }
+
+/* Enrollment progress */
+.bi-progress-wrap{ display:grid; gap:8px }
+.bi-progress{
+  height:12px; background:#0f1117; border:1px solid #24262e;
+  border-radius:999px; overflow:hidden;
+}
+.bi-progress-fill{ height:100%; background: linear-gradient(90deg, #ffc92a, #ff6a3d) }
+.bi-progress-meta{ display:flex; gap:12px; align-items:center; color:#8b90a3 }
+.bi-pct{ background: rgba(255,255,255,.04); border:1px solid #24262e; border-radius:999px; padding:.15rem .5rem }
+
+/* Price & actions */
+.bi-price{ font-size:1.6rem; font-weight:800; margin:.25rem 0 .6rem }
+.bi-actions{ display:flex; gap:8px; align-items:center }
+.bi-outline-btn{
+  border:1px solid #24262e;
+  color:#f2f3f7; padding:.45rem .8rem; border-radius:12px;
+  text-decoration:none; background: rgba(255,255,255,.04);
+}
+
+/* Notes */
+.bi-notes p{ color:#8b90a3; margin:.25rem 0 0 }
+
+/* Empty state */
+.bi-empty h1{ margin:0 0 .3rem }
+.bi-back-btn{
+  display:inline-block; margin-top:.5rem; text-decoration:none; color:#fff;
+  background: rgba(255,255,255,.04); border:1px solid #24262e; padding:.4rem .7rem; border-radius:10px;
+}
+
+/* Breakpoints */
+@media (max-width:1024px){
+  .bi-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width:720px){
+  .bi-grid{ grid-template-columns: 1fr; }
+}
+@media (max-width:600px){
+  .bt-box
+{
+    margin: 4em auto;
+    padding: 1em;
+}
+}

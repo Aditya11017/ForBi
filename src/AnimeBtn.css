@@ -1,0 +1,100 @@
+/* CSS Custom Properties */
+@property --animate-duration {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+@property --Color {
+  syntax: '<color>';
+  initial-value: #1f9b60ff;
+  inherits: false;
+}
+
+/* Animation Keyframes */
+@keyframes rotate {
+  0% {
+    --animate-duration: 0deg;
+    --Color: #1f9b60ff;
+  }
+  100% {
+    --animate-duration: 360deg;
+    --Color: #1f9b60ff;
+  }
+}
+
+/* Main Button Container */
+.an-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 1px;
+  border: none;
+  border-radius: 100px;
+  background: transparent;
+}
+
+/* Glowing Gradient Border (before & after) */
+.an-btn::before,
+.an-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: calc(100px + 1.5px);
+  background-size: 100% 100%;
+  background-position: 0 0;
+  background-image: conic-gradient(
+    from var(--animate-duration) at 50% 50%,
+    #000000 0%,
+    #131313 20%,
+    rgb(2, 249, 130) 50%,
+    var(--Color) 66%,
+    #232323 100%
+  );
+  animation: rotate 3s linear infinite;
+  z-index: 0;
+  box-shadow: 
+    0 0 16px var(--Color),
+    0 0 32px var(--Color),
+    0 0 40px var(--Color),
+    inset 0 0 12px rgba(255, 255, 255, 0.2);
+}
+
+.an-btn::before {
+  filter: blur(20px);
+}
+
+/* Inner Button Span */
+.an-btnSpan {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  padding: 1rem 2rem; /* Adjust padding as needed */
+    font-size: 1.25em;
+font-family: goth;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.89);
+  border-radius: 100px;
+  backdrop-filter: blur(40px);
+  box-shadow: 
+    0 0 0px var(--Color),
+    0 0 0px var(--Color),
+    0 0px 1px var(--Color),
+    inset 0 0 12px rgba(255, 255, 255, 0.2);
+}
+.an-btn:hover {
+    box-shadow: 
+    0 0 0px var(--Color),
+    0 0 0px var(--Color),
+    0 2px 75px var(--Color),
+    inset 0 0 12px rgb(2, 249, 130);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+strong {
+  font-weight: bolder;
+  color: #1f9b60ff;
+}

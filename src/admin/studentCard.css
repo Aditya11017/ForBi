@@ -1,0 +1,153 @@
+/* container + toolbar */
+.sc-wrap{
+  width: 100%;
+  margin: 14px auto 0;
+  color: #f2f3f7;
+}
+.sc-toolbar{
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: .5rem;
+  align-items: center;
+  margin: 0 0 .6rem;
+}
+.sc-title{ margin:0; font-size: 1.05rem }
+.sc-meta{ display:flex; gap:.5rem; align-items:center }
+.sc-badge{
+  color:#8b90a3; border:1px solid #24262e; background: rgba(255,255,255,.04);
+  padding:.15rem .5rem; border-radius:999px; font-size:.85rem;
+}
+.sc-count{ color:#8b90a3; font-size:.9rem }
+
+.card{
+  background:#15171d;
+  border:1px solid #24262e;
+  border-radius:12px;
+  padding:14px;
+  box-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+.sc-empty{ text-align:center; color:#8b90a3 }
+
+/* table head */
+.sc-table-head{
+  display: grid;
+  grid-template-columns: 2fr .9fr 1.4fr  1.1fr 1.2fr 1.2fr .9fr 1fr;
+  gap:.75rem;
+  padding:.7rem 1rem;
+  margin-bottom:.35rem;
+  background:#101111;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  color:#9f9f9f;
+  font-size:.8rem;
+}
+.sc-table-head span{ white-space: nowrap; }
+
+/* rows wrap */
+.sc-table{ display:grid; gap:.6rem; }
+
+/* row */
+.sc-row{
+  display:grid;
+  grid-template-columns: 2fr .9fr 1.4fr 1.1fr 1.2fr 1.2fr .9fr 1fr;
+  align-items:center;
+  gap:.75rem;
+  padding: .9rem 1rem;
+  background: #0f1010;
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  transition: background .2s ease;
+}
+.sc-row:hover{ background:#1a1a1a; }
+
+/* cells */
+.sc-cell{ min-width:0; }
+.sc-student{ display:grid; grid-template-columns: 44px 1fr; gap:.6rem; align-items:center; }
+.sc-student-meta .sc-name{ font-weight:700; }
+.sc-student-meta .sc-sub{ color:#8b90a3; font-size:.85rem; margin-top:.1rem }
+
+/* avatar */
+.sc-avatar{
+  width:44px; height:44px; border-radius:50%;
+  background: linear-gradient(145deg,#1b1d25,#101218);
+  border:1px solid #24262e; overflow:hidden; display:grid; place-items:center;
+  font-weight:700;
+}
+.sc-avatar img{ width:100%; height:100%; object-fit:cover }
+
+/* progress */
+.sc-progress-cell{ display:flex; align-items:center; gap:.5rem }
+.sc-progress{
+  flex: 1 1 auto;
+  height: 10px;
+  background:#0f1117;
+  border:1px solid #24262e;
+  border-radius:999px;
+  overflow:hidden;
+  min-width: 90px;
+}
+.sc-progress-fill{ height:100%; background: linear-gradient(90deg, #ffc92a, #ff6a3d); }
+.sc-progress-label{ color:#8b90a3; font-size:.85rem; white-space:nowrap }
+
+/* status pill */
+.sc-status{
+  display:inline-flex; align-items:center;
+  padding:.3rem .65rem; border-radius:999px; font-size:.8rem; font-weight:600;
+  border:1px solid #24262e; background: rgba(255,255,255,.04); color:#f2f3f7;
+}
+.sc-status.active{ color:#23b26d; background: rgba(35,178,109,.12); border-color: rgba(35,178,109,.35) }
+.sc-status.inactive{ color:#ff6a6a; background: rgba(255,104,104,.12); border-color: rgba(255,104,104,.35) }
+
+/* actions */
+.sc-actions{ display:flex; gap:.4rem; justify-content:flex-end; }
+.sc-btn{
+  padding:.35rem .75rem;
+  border-radius:8px;
+  font-size:.8rem;
+  background:#f7c948;
+  color:#121212;
+  border:1px solid rgba(255,255,255,.12);
+  cursor:pointer;
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+.sc-btn:hover{ transform: translateY(-1px); box-shadow: 0 10px 24px rgba(247,201,72,.25) }
+.sc-btn.ghost{
+  background: transparent; color:#ccc; border:1px solid rgba(255,255,255,.12);
+}
+.sc-btn.ghost:hover{ background: rgba(255,255,255,.1); color:#fff }
+
+/* mobile meta chips (hidden on desktop) */
+.sc-mobile-meta{ display:none; grid-column: 1 / -1; gap:.5rem; }
+.chip{
+  border:1px solid #24262e; background: rgba(255,255,255,.04); color:#8b90a3;
+  padding:.15rem .5rem; border-radius:999px; font-size:.8rem;
+}
+
+/* Breakpoints (match 1024 / 720 / 600 like batches) */
+@media (max-width:1024px){
+  .sc-table-head,
+  .sc-row{
+    grid-template-columns: 2fr .9fr 1.4fr 1.2fr 1.2fr; /* hide phone */
+  }
+  .col-email,.col-phone,.col-type, .sc-type{ display:none; }
+  .sc-mobile-meta{
+    display: block;
+  }
+}
+
+@media (max-width:720px){
+  .sc-table-head{ display:none; }
+  .sc-row{
+    grid-template-columns: 1.8fr 1fr; /* left: student; right: status/actions */
+    gap: .6rem;
+  }
+  .col-email, .col-phone,.col-type{ display:none; }
+  .sc-progress-cell{ grid-column: 1 / -1; }
+  .sc-actions{ justify-content:flex-start; }
+  .sc-mobile-meta{ display:flex; }
+}
+
+@media (max-width:600px){
+  .sc-btn{ padding:.35rem .6rem }
+  .sc-row{ padding:.8rem .8rem }
+}

@@ -1,0 +1,323 @@
+:root {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    /* Vertical center */
+}
+.user-form-container , .teams-info-container{
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+.user-form-box, .teams-info-box {
+    display: grid;
+    justify-items: center;
+     padding: 5.5em 0 0 0;
+     margin: 2em 0 0 0;
+     border: .75em;
+ }
+ .form-head{
+  text-decoration: underline #1f9b60ff;
+  text-underline-offset: .35rem;
+ }
+ form{
+display: grid;
+    gap: .75em;
+    padding: .75em;
+ }
+
+ .user-form-panel{
+    background: radial-gradient(circle at 5% 70%, #000000 0%, #060606 80%, #0e0e0e 100%);
+    padding: 1em 1em 5em 1em;
+    border-radius: .75em;
+    
+
+ }
+ .user-email{
+    color: white;
+ }
+ .lable-type{
+ color: #757575;
+ font-size: .95em;
+ margin: 0 0 -2em  0;   
+}
+.card-radio-group {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* default: large screens */
+  gap: .85rem;
+  padding: 1rem;
+}
+.card-radio {
+  position: relative;
+  cursor: pointer;
+  border-radius: 1rem;
+  background: #111111;
+  color: #fff;
+  padding: .5rem;
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+  border: 0.5px solid rgba(65, 64, 64, 0.826);
+  display: block;
+  min-width: 7em;
+}
+
+.card-radio:hover{
+  border: .05em solid #27f5548c;
+
+}
+.card-radio input {
+  display: none;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-content .icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-content h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #f8f6f6;
+}
+
+.card-content p {
+  font-size: 0.85rem;
+  
+  margin: 0.25rem 0 1rem;
+}
+
+.card-radio .custom-radio {
+  width: .75em;
+  height: .75em;
+  border: 2px solid #ccc;
+  border-radius: 50%;
+  display: inline-block;
+  background: #fff;
+  margin-top: auto;
+}
+.card-radio:hover{
+  color: rgb(35, 178, 109);
+
+}
+.form-div input{
+    font-size: 1.05rem;
+  color: white;
+  border: none;
+  background: transparent;
+  width: 100%;
+  max-width: 100%;
+  line-height: 1.4;        /* caret alignment */
+  box-sizing: border-box;
+  outline: none;
+  min-width: 100%;            /* flex shrink fix */
+  
+  /* ✨ Horizontal scrolling for long text */
+  white-space: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  text-overflow: clip;     /* or ellipsis if you prefer */
+  scrollbar-width: none;
+}
+.card-radio input:checked + .card-content .custom-radio {
+  background-color: rgb(35, 178, 109);
+  color: rgb(35, 178, 109);
+  border-color: rgb(35, 178, 109);
+  box-shadow: 0 0 0 4px rgba(78, 126, 255, 0.2);
+}
+
+.card-radio input:checked + .card-content {
+  color: rgb(35, 178, 109);
+  border-color: rgb(35, 178, 109);
+}
+.card-radio input:checked {
+  background: #27f5541d;
+}
+
+.student-form,.org-form,.edu-form,.firm-form,.others-form{
+    display: grid;
+    gap: 1em;
+    grid-template-columns: repeat(1,1fr);
+    padding: 1em 0 2em 0;
+}
+
+ /* Tablet (<= 1024px): 3 columns */
+@media screen and (max-width: 1024px) {
+  .card-radio-group {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile (<= 600px): 1 column */
+@media screen and (max-width: 600px) {
+    .user-form-panel{
+            padding: 0em 0em 5em 0em;
+    }
+  .card-radio-group {
+    margin: 0 -1em;
+    grid-template-columns: repeat(2, 1fr);;
+  }
+  .card-radio{
+    padding: .5em;
+    width: 4em;
+  }
+  .student-form,.org-form,.edu-form,.firm-form,.others-form{
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ✨ Employee-style radio tiles */
+.employee-count-selector {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border: none;
+}
+
+.radio-grid {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.employee-radio-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  width: 100px;
+  border: 1.5px solid #2d2d2d;
+  border-radius: 0.75rem;
+  cursor: pointer;
+  background: #111;
+  color: #fff;
+  transition: 0.25s;
+  font-size: 0.95rem;
+}
+
+.employee-radio-tile input {
+  display: none;
+}
+
+.radio-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.employee-radio-tile.selected,
+.employee-radio-tile:hover {
+  border-color: rgb(35, 178, 109);
+  background: #1a1a1a;
+  box-shadow: 0 0 0 2px rgba(39, 245, 84, 0.2);
+}
+.submit-btn {
+  grid-column: 1;
+  max-width: 15em;
+  border-radius: .5em;
+  padding: 1em 1.5em;
+  background-color: rgba(35, 178, 109, 0.105);
+  color: rgb(35, 178, 109);
+  border: 0.09em solid rgb(35, 178, 109);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: all 0.25s ease;
+}
+
+.submit-btn::after {
+  content: "→";
+  font-size: 1.2em;
+  margin-left: 0.5em;
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+/* Ripple pseudo-element */
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hover effect */
+.submit-btn:hover {
+  background-color: rgb(35, 178, 109);
+  color: #fff;
+  transform: scale(1.03);
+  box-shadow: 0 4px 14px rgba(35, 178, 109, 0.4);
+}
+
+.submit-btn:hover::after {
+  transform: translateX(4px);
+}
+
+/* Trigger ripple animation on click */
+.submit-btn:active::before {
+  width: 300%;
+  height: 300%;
+  opacity: 1;
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.8s ease;
+}
+
+.submit-btn:active::before {
+  opacity: 0;
+}
+
+
+@media (max-width: 600px) {
+  .radio-grid {
+    flex-direction: column;
+  }
+
+  .employee-radio-tile {
+    width: 100%;
+    align-items: flex-start;
+    padding: 1rem;
+  }
+}
+
+
+.btn-box{
+    width: 30%;
+}
+.button-box {
+  display: flex;
+  justify-content: space-between; /* pushes first button left, second right */
+  align-items: center;
+  width: 100%; /* ensures full width for spacing */
+  gap: .5em;
+}
+.sec-btn{
+  background: #77777784;
+  border: .009em solid #777777;
+  color: #adabab;
+    width: 7em;
+    border-radius: .5em;
+    cursor: pointer;
+}
+.skip-text{
+  background: transparent;
+  cursor: pointer;
+  text-decoration: underline;
+  color: #757575;
+  text-align: start;
+}

@@ -1,0 +1,42 @@
+.survey-section{
+  padding: 5em 1em;
+  color: #fff;
+}
+.survey-content{
+  margin: 5.5em 0 0 0;
+}
+.survey-content h1{ text-align:center; margin:0 0 .5rem 0; }
+.survey-content p{ text-align:center; opacity:.9; margin:0 0 1rem 0; }
+
+/* progress bar */
+.custom-progress-bar {
+  display:flex; justify-content:space-between; align-items:center;
+  margin:2em 0 1em; padding:0 1em;
+  justify-self: center;
+  width: 50%;
+}
+.progress-step { flex:1; height:8px; margin:0 5px; position:relative; background:#2a2a2a; border-radius:4px; transition:background-color .3s ease; }
+.progress-step.completed,.progress-step.active{ background:#23b26d; }
+.progress-step .step-number{
+  position:absolute; top:-22px; left:50%; transform:translateX(-50%);
+  font-size:.9rem; font-weight:700; color:#23b26d;
+}
+
+/* shared form layout + tiles for steps 2 & 3 */
+.survey-form{ display:flex; flex-direction:column; gap:1rem; margin-top:1.25rem; }
+.level-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-top:.5rem; }
+.level-card{
+  background:#181818; color:#fff; padding:1rem; border-radius:12px; border:2px solid transparent;
+  cursor:pointer; transition:.25s ease; text-align:left; box-shadow:0 4px 12px rgba(0,0,0,.15);
+}
+.level-card:hover{ border-color:#27f5548c; }
+.level-card.selected{ border-color:#1f9b60; box-shadow:0 0 0 .15rem rgba(35,178,109,.15) inset; }
+.level-card pre{
+  background:none; margin:0 0 .5rem; font-family:ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; color:#7f5af0; white-space:pre-wrap;
+}
+
+/* small screens */
+@media (max-width: 600px){
+  .survey-section{ padding: 4em 14px; }
+  .custom-progress-bar{ padding:0; }
+}
