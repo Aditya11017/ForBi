@@ -1,0 +1,170 @@
+/* ============================= */
+/* Custom DatePicker Component   */
+/* ============================= */
+
+.nb-wrap .nb-date { position: relative; }
+
+/* trigger chip */
+.nb-wrap .nb-date__input{
+  width:100%;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+  padding:12px 14px;
+  border-radius:12px;
+  border:1px solid var(--nb-border);
+  background:rgba(255,255,255,.03);
+  color:var(--nb-text);
+  font:500 .98rem/1.2 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  cursor:pointer;
+  transition:border-color .16s, box-shadow .16s, background .16s;
+}
+.nb-wrap .nb-date__input:hover{ background:rgba(255,255,255,.06); }
+.nb-wrap .nb-date__input:focus-visible{
+  outline:none;
+  border-color:color-mix(in oklab, var(--nb-brand) 60%, #fff 0%);
+  box-shadow:0 0 0 4px color-mix(in oklab, var(--nb-brand-2) 25%, transparent 75%);
+}
+.nb-wrap .nb-date__input.is-disabled{ opacity:.6; cursor:not-allowed; }
+.nb-wrap .nb-date__text.is-placeholder{ color:var(--nb-muted); }
+.nb-wrap .nb-date__icon{ opacity:.9; }
+
+/* popover sheet */
+.nb-wrap .nb-cal{
+  position:absolute; top:calc(100% + 8px); left:0 ; z-index:50;
+  min-width:300px;
+  background: #050505;
+  border:1px solid var(--nb-border);
+  border-radius:16px;
+  box-shadow:var(--nb-shadow);
+  padding:12px;
+  user-select:none;
+}
+
+/* header: nav ⟨  Month 2025  ⟩ */
+.nb-wrap .nb-cal__header{
+  display:grid; grid-template-columns:36px 1fr 36px; align-items:center;
+  gap:8px; margin-bottom:8px;
+}
+.nb-wrap .nb-cal__nav{
+  width:36px; height:36px;
+  display:grid; place-items:center;
+  border:1px solid var(--nb-border);
+  background:rgba(255,255,255,.03);
+  color:var(--nb-text);
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .16s, border-color .16s, transform .08s;
+}
+.nb-wrap .nb-cal__nav:hover{ background:rgba(255,255,255,.06); }
+.nb-wrap .nb-cal__selectors{
+  display:flex; gap:6px; align-items:center; justify-content:center;
+}
+
+/* make month/year look like text but remain interactive */
+.nb-wrap .nb-cal__mm,
+.nb-wrap .nb-cal__yyyy{
+  appearance:none;
+  border:none;
+  background:transparent;
+  color:var(--nb-text);
+  padding:4px 6px;
+  border-radius:8px;
+  font:700 1rem/1.2 system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
+  text-align:center;
+}
+.nb-wrap .nb-cal__yyyy{ width:84px; }
+
+/* week header */
+.nb-wrap .nb-cal__week{
+  display:grid; grid-template-columns:repeat(7,1fr);
+  gap:8px; margin:8px 0 6px;
+}
+.nb-wrap .nb-cal__wk{
+  text-align:center;
+  color:var(--nb-muted);
+  font-size:.82rem;
+  letter-spacing:.2px;
+}
+
+/* day grid */
+.nb-wrap .nb-cal__grid{
+  display:grid; grid-template-columns:repeat(7,1fr);
+  gap:8px; outline:none;
+}
+.nb-wrap .nb-cal__day{
+  height:42px;
+  border-radius:12px;
+  border:none;
+  background:rgba(255,255,255,.02);
+  color:var(--nb-text);
+  display:grid; place-items:center;
+  font-variant-numeric:tabular-nums;
+  cursor:pointer;
+  transition:background .14s, color .14s, border-color .14s, box-shadow .14s;
+}
+.nb-wrap .nb-cal__day:hover{
+  background:rgba(255,255,255,.06);
+}
+.nb-wrap .nb-cal__day.is-out{
+  color:color-mix(in oklab, var(--nb-muted) 85%, #000 15%);
+}
+.nb-wrap .nb-cal__day.is-disabled{ opacity:.38; cursor:not-allowed; }
+
+/* small dot for "today" like the mock */
+.nb-wrap .nb-cal__day.is-today{
+  position:relative;
+  color: white;
+  background: #48f77f;
+
+}
+
+.nb-wrap .nb-cal__day.is-today::after{
+  content:"";
+  position:absolute; bottom:6px; left:50%; transform:translateX(-50%);
+  width:4px; height:4px; border-radius:50%;
+  background:color-mix(in oklab, var(--nb-text) 85%, #000 15%);
+  opacity:.9;
+}
+
+/* selected day chip */
+.nb-wrap .nb-cal__day.is-selected{
+  background:rgba(255,255,255,.06);
+  box-shadow:inset 0 0 0 2px color-mix(in oklab, var(--nb-text) 55%, #000 45%);
+  border-color:transparent;
+}
+
+/* keyboard focus */
+.nb-wrap .nb-cal__day.is-active{
+  box-shadow:0 0 0 3px color-mix(in oklab, var(--nb-brand-2) 25%, transparent 75%);
+}
+
+/* footer pills */
+.nb-wrap .nb-cal__footer{
+  display:flex; justify-content:space-between; gap:8px; margin-top:12px;
+}
+.nb-wrap .nb-cal__pill{
+  border:1px solid var(--nb-border);
+  background:rgba(255,255,255,.03);
+  color:var(--nb-text);
+  padding:8px 12px;
+  border-radius:999px;
+  font-weight:700;
+  cursor:pointer;
+  transition:background .16s, border-color .16s, transform .08s;
+}
+.nb-wrap .nb-cal__pill:hover{ background:rgba(255,255,255,.06); }
+
+/* error ring from parent field */
+.nb-wrap .nb-field:has(.nb-err) .nb-date__input{
+  border-color:color-mix(in oklab, var(--nb-danger) 70%, white 0%);
+  box-shadow:0 0 0 3px color-mix(in oklab, var(--nb-danger) 20%, transparent 80%);
+}
+
+/* responsive tweaks */
+@media (max-width: 420px){
+  .nb-wrap .nb-cal{ min-width: 270px; padding:10px;
+    left: 0; top: calc(100% + 8px);
+ }
+  .nb-wrap .nb-cal__grid{ gap:6px; }
+  .nb-wrap .nb-cal__day{ height:40px; }
+}

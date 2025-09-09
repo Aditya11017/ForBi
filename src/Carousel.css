@@ -1,0 +1,257 @@
+.rt-prg-container {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 99%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    /* scroll-padding-left: 1em;
+    scroll-padding-right: 1em; */
+    gap: 1em;
+  
+    padding: 1em 2.5em;
+  
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .rt-prg-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .rt-prg-container > * {
+    scroll-snap-align: center;
+  }
+  
+  .rt-prg-box {
+    position: relative;
+    padding: 1em 1em 1em 1em;
+    border-radius: 0.5em;
+    background: rgba(36, 36, 36, 0.452);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    scroll-margin-inline: 1em;
+    color: white;
+  }
+  .batch-comp:hover{
+    background: rgba(35, 178, 109, 0.546);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: .4s ease-in;
+  }
+  .batch-excel:hover{
+    background: rgba(35, 178, 109, 0.305);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: .4s ease-in;
+  }
+  .batch-power-bi:hover{
+    background: rgba(249, 193, 27, 0.305);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: .4s ease-in;
+  }
+  .batch-python:hover{
+    background:rgba(75, 139, 190,.305);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: .4s ease-in;
+  }
+  .batch-sql:hover{
+    background:rgba(0, 117, 143,.305);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: .4s ease-in;
+  }
+  .batch-gen-ai:hover{
+    background:  rgba(116, 170, 156,.305);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: .4s ease-in;
+  }
+  .batch-soc:hover{
+    background:rgba(56, 55, 125,.305);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    backdrop-filter: saturate(180%) blur(20px);
+    transition: .4s ease-in;
+  }
+  
+  .batch-status {
+    background: rgba(31, 155, 95, 0.534);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    width: max-content;
+    position: absolute;
+    right: -0.5em;
+    top: 0.5em;
+    font-weight: 200;
+    font-size: 0.85em;
+  }
+  .batch-info {
+    background: rgba(228, 227, 227, 0.452);
+    border-radius: 0.25em;
+    padding: 0.25em 0.5em;
+    font-weight: 200;
+    font-size: 0.85em;
+    max-width:max-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .rt-prg-box > h1 {
+    padding: 1rem 0 0 0;
+}
+.rt-prg-box > p {
+    padding: .25rem 0 .75em 0;
+    line-height: 1.6;
+    font-size: .95rem;
+    max-width: 110ch;
+    word-spacing: inherit;
+    overflow-wrap: break-word;
+    text-justify: inter-word;
+    text-align: left;
+    
+}
+
+
+
+.rt-prg-btn{
+    border:  2px solid white;
+  color: white;
+  background: transparent;
+  font-size: 1.25rem;
+  padding: .75rem 1.45rem;
+  border-radius: 5.597px;
+  text-decoration: none;
+  font-weight: 300;
+    display: grid;
+    justify-self: center;
+}
+.rt-prg-btn:hover{
+    border:  2px solid rgba(36, 36, 36, 0.452);
+    color: white;
+    font-size: 1.25rem;
+    padding: .75rem 1.45rem;
+    border-radius: 5.597px;
+    transition: .4s ease-in;
+    font-weight: 400;
+    text-decoration: none;
+    background: #1f9b60ff;
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+            backdrop-filter: saturate(180%) blur(20px);
+            cursor: pointer;
+}
+.rt-prg-container::-webkit-scrollbar {
+    display: none;
+  }
+  .carousel-wrapper {
+    position: relative;
+    width: 100%;
+  }
+  
+  .nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    border: none;
+    padding: .5em .5em;
+    height: 4em;
+    width: 4em;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    transition: background 0.3s;
+  }
+  
+  .nav-btn:hover {
+    background:  rgba(92, 91, 91, 0.52);
+  }
+  .arrow-icon{
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  .left-btn {
+    left: 0.25em;
+  }
+  
+  .right-btn {
+    right: 0.25em;
+  }
+  .rt-prg-box img {
+    width: 10em;
+    height: 10em;
+    object-fit: contain;
+    margin-bottom: 1em;
+  }
+  .view-btn{
+    position: absolute;
+    bottom: 1em;
+    left:1.5em;
+    border: 1px solid white;
+    text-decoration: none;
+    background: transparent;
+    color: white;
+    font-size: .95em;
+    padding: .75em 1em;
+    border-radius: .5em;
+    cursor: pointer;
+  }
+  .view-btn:hover{
+    background: #fff;
+    color: black;
+    transition: .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  }
+  .rt-prg-box > p{
+    margin: 1em 0 3em 0;
+  }
+  .course-link{
+    color: white;
+    align-items: center;
+    display: grid;
+    justify-self: center;
+    width: clamp(20em, 40%, 30em);
+    padding: .5em;
+    font-size: 1.05em;
+    border-radius: .5em;
+    border: .005em solid white;
+    justify-items: center;
+    margin: .75em;
+  }
+  .course-link:hover{
+    background: #1f9b60ff;
+    color: white;
+    border: .005em solid #1f9b60ff;
+    transition: .45s all ease-in-out;
+  }
+
+@media (max-width: 1200px) and (min-width: 768px) {
+    .rt-prg-container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 71%;
+}
+.rt-prg-box img {
+    width: 12em;
+    height: 12em;
+    object-fit: contain;
+    margin-bottom: 1em;
+  }
+}
+
+@media (min-width: 1200px) {
+
+    .rt-prg-container {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: 39%;
+}
+.rt-prg-box img {
+    width: 12em;
+    height: 12em;
+    object-fit: contain;
+    margin-bottom: 1em;
+  }
+}

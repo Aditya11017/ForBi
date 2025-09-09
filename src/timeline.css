@@ -1,0 +1,171 @@
+.timeline-container {
+  padding: 1rem;
+  width: 100%;
+}
+
+.timeline-label {
+  font-size: 0.9em;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-bar {
+  position: relative;
+  height: 3em;
+  margin-bottom: 2rem;
+  margin-left: -2em;
+}
+
+/* === Thin, Evenly-Spaced Strips === */
+.timeline-bar-strips {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 8px; /* adjust side padding as you like */
+}
+.timeline-strip {
+  width: 4px;
+  height: 80%;
+  background: #444;
+  opacity: 0.6;
+  border-radius: 2px;
+  transform: scaleY(0.2);
+  animation: stripGrow 0.4s ease-out forwards;
+}
+.timeline-strip.strip-filled {
+  background: linear-gradient(to top, #0f9b4c, #26e073);
+  opacity: 1;
+}
+@keyframes stripGrow {
+  to { transform: scaleY(1); opacity: 1; }
+}
+
+/* === Week Ruler === */
+/* === Week Ruler === */
+@media screen and (max-width: 600px) {
+  .timeline-ruler{
+    margin-left: 3em;
+    /* adjust side padding as you like */
+  }
+  
+}
+.timeline-ruler {
+  position: absolute;
+  bottom: -80%;        /* move ruler above the bar */
+  left: 0;
+  right: 0;
+  height: .5rem;        /* enough room for line + label */
+  display: flex;       /* we'll absolutely position ticks */
+  pointer-events: none;
+}
+
+.tick-mark {
+  position: absolute;
+  bottom: 0;           /* align tick-line bottom with top of bar */
+  transform: translateX(50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.tick-line {
+  width: 0;                /* no background bar—just the border */
+  height: 1.5rem;            /* length of the dash line */
+  border-left: 1px dashed #666;
+  margin: 0 auto auto auto;          /* center in its container */
+  background: none;
+}
+
+.tick-label {
+  margin-top: 0.25rem; /* gap above the line */
+  font-size: 0.5em;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+/* Remove old dashed‐line rule if present */
+
+
+
+/* === Triangle Milestone === */
+.milestone-triangle {
+  position: absolute;
+  top: 100%;
+  margin-top: 4px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid #444;
+  transform: translateX(-50%);
+}
+.milestone-triangle.filled {
+  border-bottom-color: #26e073;
+}
+
+/* === Tooltip === */
+.tooltip {
+  position: absolute;
+top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1a1a1a;
+  color: #fff;
+  padding: 4px 6px;
+  border-radius: 4px;
+  font-size: 0.7em;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.milestone-triangle:hover .tooltip {
+  opacity: 1;
+  cursor: pointer;
+}
+/* green dashed line under each triangle milestone */
+.milestone-triangle::after {
+  content: '';
+  position: absolute;
+  top: 100%;               /* start at bottom of the triangle */
+  left: 50%;               /* center under the triangle */
+  transform: translateX(-50%);
+  transform: translateY(-150%);
+  height: 3.5rem;  
+  margin: 1.25em 0;          /* same length as tick-line */
+  border-left: 1px dashed #26e073;
+}
+
+/* Kick-off box */
+.kickoff-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 .8em;
+  background: #0b0b0b;
+  color: #26e073;
+  font-weight: bold;
+  border: 1px solid #26e073;
+  border-radius: 4px 0 0 4px;
+  z-index: 2;
+  pointer-events: none;
+}
+/* green stripe on the right edge of the box */
+.kickoff-box::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -2px;
+  width: 2px;
+  height: 100%;
+  background: #26e073;
+  border-radius: 0 2px 2px 0;
+}
+@media screen and (max-width: 600px) {
+  .timeline-bar {
+  display: none;
+}
+  
+}

@@ -1,0 +1,238 @@
+/* adminUserPanel.css (no :root, no CSS variables) */
+
+.umx-container {
+  color: #ffffff;
+  background: linear-gradient(120deg, #0b0e0f, #0d0f10 40%, #0b0f0d 100%);
+  padding: 24px;
+}
+.umx-shell {
+  width: min(1200px, 96vw);
+  margin: 0 auto;
+}
+
+.umx-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 8px 0 18px;
+}
+.umx-title { margin: 0 0 6px 0; }
+.umx-subtitle { margin: 0; color: #9aa4ad; }
+
+.umx-tabs { display: flex; gap: .5rem; flex-wrap: wrap; }
+.umx-tab {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: transparent;
+  color: #ffffff;
+  padding: .6rem .9rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.umx-tab--active {
+  border-color: #1f9b60;
+  background: rgba(31, 155, 96, 0.15);
+}
+
+.umx-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .9rem;
+  margin: 12px 0 18px;
+}
+@media (max-width: 860px) {
+  .umx-stats { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 520px) {
+  .umx-stats { grid-template-columns: 1fr; }
+}
+.umx-stat {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+.umx-stat__label { color: #9aa4ad; font-size: .9rem; }
+.umx-stat__value { font-size: 1.6rem; font-weight: 700; margin-top: 4px; }
+
+.umx-toolbar { margin: 10px 0 6px; }
+.umx-filter-row { display: flex; gap: .5rem; flex-wrap: wrap; }
+
+.umx-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .9rem;
+}
+@media (max-width: 1020px) {
+  .umx-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .umx-grid { grid-template-columns: 1fr; }
+}
+
+.umx-card {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: 14px;
+  background: rgba(30, 30, 30, 0.48);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+.umx-glass { backdrop-filter: blur(6px); }
+
+.umx-card__head {
+  display: flex; justify-content: space-between; align-items: center; gap: .5rem;
+}
+.umx-card__title { margin: 0; }
+.umx-card__meta { display: flex; gap: 12px; flex-wrap: wrap; margin: 6px 0 12px; }
+.umx-meta { color: #9aa4ad; font-size: .9rem; }
+
+.umx-progress {
+  width: 100%; height: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px; overflow: hidden;
+  background: rgba(255,255,255,.04);
+}
+.umx-progress__bar {
+  height: 100%;
+  background: linear-gradient(90deg, #1f9b60, #29c47a);
+}
+.umx-progress__legend {
+  display: flex; justify-content: space-between; margin-top: 6px;
+  color: #9aa4ad; font-size: .9rem;
+}
+
+.umx-card__actions { display: flex; gap: .5rem; margin-top: 12px; flex-wrap: wrap; }
+
+.umx-badge {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: .25rem .55rem;
+  border-radius: 8px;
+  font-size: .8rem;
+  color: #9aa4ad;
+}
+.umx-badge--active { border-color: #1f9b60; color: #d7ffe9; }
+.umx-badge--upcoming { border-color: #caa94a; color: #fff1c6; }
+.umx-badge--cancelled { border-color: #8b8b8b; color: #e0e0e0; }
+.umx-badge--completed { border-color: #6bb2ff; color: #d7ecff; }
+
+.umx-panel {
+  padding: 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+
+.umx-panel__head {
+  display: flex; align-items: end; justify-content: space-between; gap: .5rem;
+  margin-bottom: 12px;
+}
+.umx-panel__title { margin: 0; }
+.umx-panel__controls {
+  display: flex; gap: .5rem; flex-wrap: wrap; align-items: center;
+}
+
+.umx-tablewrap {
+  overflow: auto;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.umx-table {
+  width: 100%; border-collapse: collapse; min-width: 720px;
+}
+.umx-table thead th {
+  text-align: left; font-weight: 600; padding: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,.03);
+}
+.umx-table tbody td {
+  padding: 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+.umx-emptycell { text-align: center; color: #9aa4ad; }
+
+.umx-actions { display: flex; gap: .4rem; align-items: center; flex-wrap: wrap; }
+.umx-inline { display: inline-flex; gap: .4rem; align-items: center; }
+
+.umx-input, .umx-select {
+  background: rgba(255,255,255,.04);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
+  padding: .6rem .7rem;
+  outline: none;
+}
+.umx-select--xs, .umx-input--xs {
+  padding: .35rem .45rem; font-size: .9rem; border-radius: 8px;
+}
+
+.umx-btn {
+  background: rgba(31, 155, 96, 0.15);
+  color: #eafff4;
+  border: 1px solid #1f9b60;
+  border-radius: 10px;
+  padding: .55rem .8rem;
+  cursor: pointer;
+}
+.umx-btn:hover { filter: brightness(1.05); }
+.umx-btn--ghost {
+  background: transparent;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.12);
+}
+.umx-btn--danger {
+  background: rgba(255, 91, 91, 0.15);
+  border-color: #ff5b5b;
+  color: #ffd6d6;
+}
+.umx-btn--xs { padding: .35rem .55rem; font-size: .9rem; border-radius: 8px; }
+
+.umx-pill {
+  display: inline-block;
+  padding: .25rem .5rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  font-size: .8rem;
+}
+.umx-pill--ok { border-color: #1f9b60; color: #d7ffe9; }
+.umx-pill--muted { color: #9aa4ad; }
+
+.umx-accordion {
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  border-radius: 16px;
+  padding: .6rem .8rem;
+  margin-bottom: 1rem;
+}
+.umx-accordion__sum { cursor: pointer; color: #9aa4ad; }
+
+.umx-form { display: grid; gap: .8rem; }
+.umx-form__row { display: grid; gap: .35rem; }
+.umx-label { color: #9aa4ad; font-size: .9rem; }
+.umx-req { color: #ffb9b9; margin-left: .25rem; }
+.umx-sublabel { color: #9aa4ad; font-size: .85rem; }
+
+.umx-pwd { display: flex; gap: .4rem; flex-wrap: wrap; }
+
+.umx-form__actions { display: flex; gap: .5rem; }
+
+.umx-reportbar__label { margin: 8px 0; color: #9aa4ad; }
+.umx-reportbar__track {
+  height: 12px; border-radius: 999px; overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,.04);
+}
+.umx-reportbar__fill { height: 100%; background: linear-gradient(90deg, #1f9b60, #29c47a); }
+
+.umx-statusbreak {
+  margin-top: 12px; padding: 12px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+.umx-h3 { margin: 0 0 8px 0; }
+.umx-list { margin: 0; padding-left: 18px; }
+
+.umx-empty {
+  padding: 16px; text-align: center; color: #9aa4ad;
+  border-radius: 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  background: rgba(255,255,255,.02);
+}

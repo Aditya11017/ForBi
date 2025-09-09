@@ -1,0 +1,17 @@
+.loader-block {
+  background: linear-gradient(90deg, #1c1c1c 20%, #242424 40%, #1c1c1c 60%);
+  background-size: 200% 100%;
+  animation: shimmer 1.25s linear infinite;
+}
+
+@keyframes shimmer {
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader-block {
+    animation: none;
+  }
+}

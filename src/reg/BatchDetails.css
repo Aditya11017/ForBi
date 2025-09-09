@@ -1,0 +1,57 @@
+.batch-details-drawer {
+  background: #111;
+  color: #eee;
+  padding: 1.5rem;
+  border-top: 1px solid #333;
+  z-index: 999;
+  box-shadow: 0 -5px 15px rgba(0,0,0,0.4);
+  transition: transform 0.4s ease;
+  transform: translateY(0%);
+  overflow-y: auto;
+  border-radius: 1rem 1rem 0 0;
+}
+.batch-details-inline {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 1em;
+  background: #111111;
+  margin: 1em 0 1.5em 0;
+  padding: 1em;
+  border-radius: 0.75em;
+  color: #ccc;
+  animation: expandPanel 0.4s ease;
+}
+.id-tag{
+  font-size: 1.05em;
+  font-weight: 500;
+  color: #eee;
+  background: #2b2b2b;
+  border-radius: .5em;
+  padding: 1em;
+  width: 50%;
+}
+.batch-name-tag{
+  grid-column: 1/1;
+  grid-row: 2;
+  font-weight: 900;
+  font-style: 1.75em;
+  color: white;
+}
+@keyframes expandPanel {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+    transform-origin: top;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+@media(max-width:600px){
+  .batch-details-inline {
+  display: grid;
+  grid-template-columns:1fr;
+}
+}

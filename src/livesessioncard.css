@@ -1,0 +1,200 @@
+.batch-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  transition: transform 0.3s ease;
+  max-width: 340px;
+  width: 100%;
+  justify-content: center;
+}
+
+.batch-card-info {
+  background: #111111;
+  padding: 1.5em;
+  border-radius: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.batch-card-info:hover{
+      box-shadow: 0 9px 19px rgba(68, 91, 72, 0.35);
+}
+
+.batch-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.batch-logo {
+  width: 5em;
+  height: 7em;
+  border-radius: 0.5rem;
+  object-fit: contain;
+}
+
+.live-tag {
+    display: flex;
+    align-items: center;
+    gap: .25em;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.4em 0.75em;
+  border-radius: 0.5em;
+  color: #ccc;
+  font-size: 0.9em;
+}
+
+.batch-title {
+    display: flex;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #fff;
+  gap: .25em;
+  text-align: left;
+  
+}
+.batch-title span{
+    display: flex;
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 0.4em 0.75em;
+  border-radius: 0.5em;
+  color: #fff;
+  align-items: center;
+}
+.batch-id{
+    white-space:nowrap;
+}
+.batch-time{
+    display: flex;
+    gap: .25em;
+}
+.batch-date{
+        display: flex;
+    gap: .25em;
+      align-items: center;
+  justify-items: center;
+  
+}
+.batch-date img{
+      width: 1.05em;
+  height: 1.05em;
+  object-fit: contain;
+}
+.batch-date span{
+    font-size: 1.15em;
+}
+.batch-meta {
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.duration{
+    display: flex;
+  align-items: center;
+  justify-items: center;
+  gap:.5em;
+}
+.batch-seat{
+    display: flex;
+  align-items: center;
+  font-size: 1.15em;
+}
+.batch-seat img {
+    margin-right: .5em;
+}
+
+.batch-price-box {
+  font-size: 1.5rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25em;
+}
+
+.discount-label {
+    font-size: 1.25rem;
+  color: #23b26d;
+  font-weight: 600;
+}
+
+.mrp-label {
+  font-size: 1rem;
+  color: #888;
+}
+
+.session-btn-reg {
+  padding: 0.75em 1.25em;
+  background: transparent;
+  color: #02ed7c;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  border: 1px solid #02ed7c;
+  cursor: pointer;
+  transition:  0.3s ease;
+}
+
+.session-btn-reg:hover {
+  background: linear-gradient(to right, #188f53, #146b45);
+  color: #fff;
+  border: none;
+}
+.session-btn-reg-deactivated {
+  padding: 0.75em 1.25em;
+background: #444; /* muted gray */
+  color: #aaa;
+  font-weight: normal;
+  border: none;
+  cursor: not-allowed;
+  opacity: 0.6;
+  border-radius: 0.5rem;
+  box-shadow: none;
+  transition: none;
+}
+.btn-added {
+    background: linear-gradient(to right, #23b26d, #1f9b60ff);
+  color: white;
+  font-weight: bold;
+  border: none;
+}
+/* Ensures card fills the grid cell but doesn't overflow */
+.live-batch-box {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+/* Main card */
+.batch-card {
+  border-radius: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.batch-card:hover {
+  transform: translateY(-5px);
+}
+
+
+/* Ensure images/icons don’t overflow */
+.batch-card img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Optional: Reset child spacing issues */
+.batch-card * {
+  box-sizing: border-box;
+}

@@ -1,0 +1,295 @@
+.subadmin-container{
+  width: 100%;
+  min-height: 100vh;
+  color: #f2f3f7;
+  
+}
+.sub-admin-box{
+  width: min(1200px, 96vw);
+  margin: 0;
+}
+.sub-box{
+    margin: 0 0 0 2em;
+}
+/* head + stepper */
+.sa-head{
+  display:flex; align-items:center; justify-content:space-between;
+  margin: 0em 0 1.5rem 0;
+  padding: 4em 0 0 0;
+}
+.sa-head h1{ margin: 0; font-size: 1.4rem }
+.sa-steps{ display:flex; gap:8px; flex-wrap: wrap }
+.sa-step{
+  border:1px solid #24262e; background: rgba(255,255,255,.04); color:#8b90a3;
+  padding:.25rem .55rem; border-radius:999px; font-size:.85rem;
+}
+.sa-step.active{ color:#f2f3f7; border-color:#3a3d49 }
+
+/* cards + grid */
+.card{
+  background:#101111; border:1px solid #24262e; border-radius:14px;
+  padding:14px; box-shadow: 0 8px 30px rgba(0,0,0,.25);
+}
+.sa-grid{ display:grid; grid-template-columns: 1fr; gap: 12px }
+.sa-card h3{ margin:.25rem 0 10px }
+
+/* form */
+.sa-form{ display:grid; grid-template-columns: 1fr 1fr; gap:10px }
+.sa-field{ display:flex; flex-direction:column; gap:6px }
+.sa-field label{ color:#8b90a3; font-size:.9rem }
+.sa-field input, .sa-field select{
+  background:#101214; color:#f2f3f7; border:1px solid #24262e; border-radius:10px;
+  padding:.65rem .7rem; outline:none;
+}
+.err{ color:#ff6a6a; font-size:.85rem; }
+.mb{ margin-bottom: .5rem }
+.sa-split{ display:grid; grid-template-columns: 1fr 1fr; gap: 10px }
+
+/* permissions */
+.sa-perm-head{
+  display:grid; grid-template-columns: 1.6fr repeat(4, 1fr) .9fr; gap:8px;
+  background:#101111; border:1px solid rgba(255,255,255,.06); border-radius:12px;
+  color:#9f9f9f; font-size:.85rem; padding:.6rem .8rem; margin-bottom:.35rem;
+}
+.sa-perm-table{ display:grid; gap:.6rem }
+.sa-perm-row{
+  display:grid; grid-template-columns: 1.6fr repeat(4, 1fr) .9fr; gap:8px;
+  background:#0f1010; border:1px solid rgba(255,255,255,.06); border-radius:12px;
+  padding:.6rem .8rem; align-items:center;
+}
+.hint{
+    color: #ff6a6a;
+  }
+.sa-perm-mod{ font-weight:700 }
+.sa-check{ display:flex; align-items:center; gap:.4rem; color:#d7d9e4; font-size:.95rem }
+.sa-check input{ width:16px; height:16px; accent-color:#23b26d }
+.sa-pill{
+  justify-self:end; padding:.35rem .7rem; border-radius:999px; font-size:.85rem;
+  background: transparent; border:1px solid rgba(255,255,255,.12); color:#ccc; cursor:pointer;
+}
+.sa-pill.on{ background:#23b26d; color:#0f0f0f; border-color:#23b26d; }
+
+/* scope */
+.sa-scope-toggle{ display:flex; gap:.5rem; margin-bottom:.5rem; }
+.sa-chip{
+  display:inline-flex; gap:.5rem; align-items:center; cursor:pointer;
+  border:1px solid #24262e; background: rgba(255,255,255,.04); color:#8b90a3;
+  padding:.35rem .6rem; border-radius:999px; user-select:none;
+}
+.sa-chip input{ display:none }
+.sa-chip.active{ color:#f2f3f7; border-color:#3a3d49 }
+
+.sa-scope-list{ display:grid; gap:.6rem }
+.sa-scope-head{
+  display:grid; grid-template-columns: 2fr 1fr 1fr 1fr .8fr; gap:8px;
+  background:#101111; border:1px solid rgba(255,255,255,.06); border-radius:12px;
+  color:#9f9f9f; font-size:.85rem; padding:.6rem .8rem;
+}
+.sa-scope-row{
+  display:grid; grid-template-columns: 2fr 1fr 1fr 1fr .8fr; gap:8px;
+  background:#0f1010; border:1px solid rgba(255,255,255,.06); border-radius:12px;
+  padding:.6rem .8rem; align-items:center;
+}
+.sa-scope-cell select,
+.sa-scope-cell input{
+  width:100%; background:#101214; border:1px solid #24262e; color:#f2f3f7;
+  border-radius:10px; padding:.55rem .6rem; outline:none;
+}
+.ta-right{ text-align:right }
+
+/* review */
+.sa-review{
+  display:grid; grid-template-columns: 1fr 1fr 1fr; gap:12px;
+}
+.sa-review-title{ font-weight:800; margin-bottom:.35rem }
+.sa-review ul{ margin:0; padding-left: 1.1rem }
+.sa-perm-summary{ columns: 2; } /* compact list */
+
+/* footer actions */
+.sa-foot{
+  margin-top: 10px; display:flex; gap:8px; justify-content:flex-end;
+}
+.sa-btn{
+  background:#f7c948; color:#121212; border:1px solid rgba(255,255,255,.08);
+  padding:.5rem .9rem; border-radius:12px; cursor:pointer; font-weight:700;
+  transition: transform .12s ease, box-shadow .2s ease, background .2s ease;
+}
+.sa-btn:hover{ transform: translateY(-1px); box-shadow:0 10px 24px rgba(247,201,72,.25) }
+.sa-btn.ghost{ background: transparent; color:#ccc; border:1px solid rgba(255,255,255,.12); font-weight:600 }
+.sa-btn.ghost:hover{ background: rgba(255,255,255,.08); color:#fff }
+.sa-btn.primary{ background:#23b26d; color:#0e0e0e; border-color:#23b26d }
+.sa-btn[disabled]{ opacity:.6; cursor:not-allowed; filter:grayscale(.2) }
+/* ---- Review banner ---- */
+.sa-review-card .sa-review-header{
+  display:grid;
+  grid-template-columns: 1fr auto auto;
+  gap:12px; align-items:center; margin-bottom:10px;
+}
+.sa-id{ display:flex; gap:.75rem; align-items:center; }
+.sa-avatar{
+  width:48px; height:48px; border-radius:50%;
+  background: linear-gradient(145deg,#1b1d25,#101218);
+  border:1px solid #24262e; display:grid; place-items:center; font-weight:800;
+}
+.sa-name{ font-weight:800; font-size:1.05rem; }
+.sa-sub{ color:#8b90a3; font-size:.9rem; }
+.sa-badges{ display:flex; gap:.4rem; flex-wrap:wrap; justify-content:flex-end; }
+.sa-edit{ display:flex; gap:.4rem; }
+
+/* ---- Stat tiles ---- */
+.stat-grid{ display:grid; grid-template-columns: repeat(4,1fr); gap:.6rem; margin-bottom:.8rem; }
+.stat{
+  background:#0f1010; border:1px solid rgba(255,255,255,.06);
+  border-radius:12px; padding:.65rem .8rem;
+}
+.stat-label{ color:#8b90a3; font-size:.8rem; }
+.stat-value{ font-weight:800; font-size:1rem; }
+
+/* ---- Sections ---- */
+.sa-section{ margin-top:.75rem; }
+.sa-section.two-col{ display:grid; grid-template-columns: 1fr 1fr; gap:.6rem; }
+.sa-section-title{ margin:.2rem 0 .5rem; font-weight:800; color:#d7d9e4; }
+.sa-card-lite{
+  background:#101214; border:1px solid rgba(255,255,255,.06); border-radius:12px; padding:.7rem .8rem;
+}
+.sa-list{ margin:0; padding-left:1.1rem; }
+
+/* ---- Access table polish ---- */
+.sa-mini-head{
+  display:grid; grid-template-columns: 1.6fr 1fr 1fr .9fr; gap:.6rem;
+  background:#101111; border:1px solid rgba(255,255,255,.06);
+  border-radius:10px; padding:.55rem .6rem; color:#9f9f9f; font-size:.9rem;
+}
+.sa-mini-row{
+  display:grid; grid-template-columns: 1.6fr 1fr 1fr .9fr; gap:.6rem;
+  padding:.55rem .6rem; border:1px solid rgba(255,255,255,.06);
+  border-radius:10px; margin-top:.5rem; background:#0f1010;
+}
+.sa-mini-row:nth-child(odd){ background:#121416; }
+.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace; }
+
+/* ---- Security row ---- */
+.sa-security{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:.55rem .6rem; border:1px solid rgba(255,255,255,.06);
+  background:#0f1010; border-radius:10px; margin-bottom:.3rem;
+}
+
+/* ---- Small button variant ---- */
+.sa-btn.sm{ padding:.3rem .6rem; border-radius:8px; font-size:.8rem; }
+
+/* ===== Print to PDF: only print the Review card, A4, crisp colors ===== */
+@media print {
+  /* print colors closer to screen */
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* hide everything… */
+  body * { visibility: hidden; }
+
+  /* …except the review card */
+  .sa-review-card, .sa-review-card * {
+    visibility: visible;
+  }
+
+  /* place review card at page origin, remove appy shadows/borders that waste ink */
+  .sa-review-card {
+    position: absolute;
+    left: 0; top: 0;
+    width: 90%;
+    box-shadow: none !important;
+    border: none !important;
+    background: #fff !important;     /* white paper background for cleaner output */
+    color: #000 !important;           /* switch text to black for readability */
+  }
+  
+  /* optional: neutralize dark UI blocks inside the card for print */
+  .sa-mini-head,
+  .sa-mini-row,
+  .sa-card-lite,
+  .stat {
+    background: #ffffff !important;
+    border-color: #cccccc !important;
+    color: #000 !important;
+  }
+
+  .sa-pill { 
+    border-color: #000 !important; 
+    color: #000 !important; 
+    background: transparent !important; 
+  }
+
+  /* remove non-essential UI in print */
+  .sa-head,
+  .sa-foot,
+  .sa-edit .sa-btn,
+  .sa-btn,
+  .sa-scope-toggle { display: none !important; }
+
+  /* page size + margins */
+  @page {
+    size: A4;
+    margin: 21mm;
+  }
+
+  /* avoid splitting rows/blocks across pages */
+  .sa-mini-row,
+  .sa-mini-head,
+  .stat-grid,
+  .sa-section,
+  .sa-list { break-inside: avoid; page-break-inside: avoid; }
+}
+
+
+/* ---- Responsive ---- */
+@media (max-width:1024px){
+  .stat-grid{ grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width:720px){
+  .sa-review-card .sa-review-header{ grid-template-columns: 1fr; }
+  .sa-section.two-col{ grid-template-columns: 1fr; }
+  .stat-grid{ grid-template-columns: 1fr 1fr; }
+}
+@media (max-width:600px){
+  .stat-grid{ grid-template-columns: 1fr; }
+}
+
+
+/* breakpoints */
+@media (max-width:1024px){
+  .sa-grid{ grid-template-columns: 1fr }
+  .sa-perm-head, .sa-perm-row{
+    grid-template-columns: 1.2fr repeat(4, .9fr) .8fr;
+  }
+  .sa-scope-head, .sa-scope-row{
+    grid-template-columns: 1.6fr 1fr 1fr 1fr .8fr;
+  }
+  .sa-review{ grid-template-columns: 1fr 1fr }
+}
+
+@media (max-width:720px){
+  .sa-form{ grid-template-columns: 1fr }
+  .sa-split{ grid-template-columns: 1fr }
+  .sa-review{ grid-template-columns: 1fr }
+}
+
+@media (max-width:600px){
+  .sa-head{ flex-direction: column; align-items: flex-start; gap:.5rem }
+  .sa-perm-head, .sa-perm-row{
+    grid-template-columns: 1.2fr repeat(2, 1fr) .8fr; /* hide edit/delete on very small screens via overflow or CSS if needed */
+  }
+}
+/* Style the input */
+.sa-field input[type="date"]{
+  /* your existing styles … */
+                  /* room for the icon */
+  background-repeat: no-repeat;
+  background-position: right .75rem center;
+  background-size: 1rem;
+
+  /* ✅ custom calendar icon color (change %23f7c948 to your hex, URL-encoded) */}  .sa-field input[type="date"]::-webkit-calendar-picker-indicator {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(80deg) brightness(0.9);
+    cursor: pointer;
+  }
